@@ -18,7 +18,7 @@
     <?php 
         echo "<select name='pokemon'>";
         while($fila = $resultado->fetch_assoc()){
-            echo "<option value='$fila[id_pokemon]'>$fila[Nombre]</option>";
+            echo "<option value='$fila[id_pokemon]'>$fila[Nombre_poke]</option>";
         }
         echo "</select>";
     ?>
