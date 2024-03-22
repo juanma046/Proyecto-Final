@@ -29,6 +29,8 @@
                 echo "<td>$fila1[Nombre]</td>";
                 echo "<td>$fila1[Jugadas]</td>";
                 echo "<td>$fila1[Ganadas]</td>";
+                echo "<td><button class='btn btn-warning'><a href='modificar.php?id=$fila1[id_participante]' class='text-white'>Editar</a></button></td>";
+                echo "<td><button class='btn btn-danger'><a href='eliminar.php?id=$fila1[id_participante]' class='text-white'>Eliminar</a></button></td>";
             echo "</tr>";
         }
         echo "</table>";

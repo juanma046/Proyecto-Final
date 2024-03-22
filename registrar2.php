@@ -26,12 +26,13 @@
     $id_participante = "SELECT id_participante FROM participantes WHERE Nombre LIKE '$nombre'";
     $result = $mysqli->query($id_participante);
 
-    //Repetimos todo lo anterior pero insertando el pokemon del participante
-    $sql2 = "INSERT INTO individuo_pokemon (id_participante, id_pokemon, nivel) VALUES ('$result','$id_pokemon','$nivel')";
-    $resultado1 = $mysqli->query($sql1);
+    ////Repetimos todo lo anterior pero insertando el pokemon del participante
+    $fila = $result->fetch_assoc();
+    $sql2 = "INSERT INTO individuo_pokemon (id_participante, id_pokemon, nivel) VALUES ('$fila[id_participante]','$id_pokemon','$nivel')";
+    $resultado2 = $mysqli->query($sql2);
 
     //Si se se han guardado los registros se vuelve al index
-    if ($resultado1 > 0 || $resultado2 > 0){
+    if ($resultado1 > 0){
         $mysqli->close();
         header("Location:index.php");
 
