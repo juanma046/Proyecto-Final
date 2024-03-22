@@ -11,14 +11,11 @@
 
     //Obtengo los datos introducidos en el formulario anterior
     $nombre = $_POST['nombre'];
-    $id_pokemon = $_POST['id_pokemon'];
     $pokemon = $_POST['pokemon'];
     $nivel = $_POST["nivel"];
-    $jugadas = 0;
-    $ganadas = 0;
 
     //Se prepara la sentencia SQL
-    $sql1 = "INSERT INTO participantes (Nombre, Jugadas, Ganadas) VALUES('$nombre','$jugadas','$ganadas')";
+    $sql1 = "INSERT INTO participantes (Nombre, Jugadas, Ganadas) VALUES('$nombre')";
 
     //Se ejecuta la sentencia y se guarda el resultado en $resulado1
     $resultado1 = $mysqli->query($sql1);
@@ -28,7 +25,7 @@
 
     ////Repetimos todo lo anterior pero insertando el pokemon del participante
     $fila = $result->fetch_assoc();
-    $sql2 = "INSERT INTO individuo_pokemon (id_participante, id_pokemon, nivel) VALUES ('$fila[id_participante]','$id_pokemon','$nivel')";
+    $sql2 = "INSERT INTO individuo_pokemon (id_participante, id_pokemon, nivel) VALUES ('$fila[id_participante]','$pokemon','$nivel')";
     $resultado2 = $mysqli->query($sql2);
 
     //Si se se han guardado los registros se vuelve al index
