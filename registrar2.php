@@ -11,25 +11,32 @@
 
     //Obtengo los datos introducidos en el formulario anterior
     $nombre = $_POST['nombre'];
-    $pokemon = $_POST['pokemon'];
-    $nivel = $_POST["nivel"];
+    $ID_pokemon = $_POST['pokemon'];
+    $jugadas = 0;
+    $ganadas = 0;
+
+    $sqlpoke = "SELECT Nombre FROM pokémon WHERE id_pokemon LIKE '$ID_pokemon'";
+    $resultadoP = $mysqli->query($sqlpoke);
+
+    $fila = $resultadoP->fetch_assoc();
+    $nombre_pokemon = $fila['Nombre'];
 
     //Se prepara la sentencia SQL
-    $sql1 = "INSERT INTO participantes (Nombre, Jugadas, Ganadas) VALUES('$nombre')";
+    $sql1 = "INSERT INTO participantes (Nombre, individuo_pokemon, Jugadas, Ganadas) VALUES ('$nombre','$nombre_pokemon','$jugadas','$ganadas')";
 
     //Se ejecuta la sentencia y se guarda el resultado en $resulado1
-    $resultado1 = $mysqli->query($sql1);
-
-    $id_participante = "SELECT id_participante FROM participantes WHERE Nombre LIKE '$nombre'";
-    $result = $mysqli->query($id_participante);
-
-    ////Repetimos todo lo anterior pero insertando el pokemon del participante
-    $fila = $result->fetch_assoc();
-    $sql2 = "INSERT INTO individuo_pokemon (id_participante, id_pokemon, nivel) VALUES ('$fila[id_participante]','$pokemon','$nivel')";
-    $resultado2 = $mysqli->query($sql2);
+    $resultado = $mysqli->query($sql1);
+//
+    //$id_participante = "SELECT id_participante FROM participantes WHERE Nombre LIKE '$nombre'";
+    //$result = $mysqli->query($id_participante);
+//
+    //////Repetimos todo lo anterior pero insertando el pokemon del participante
+    //$fila = $result->fetch_assoc();
+    //$sql2 = "INSERT INTO individuo_pokemon (id_participante, id_pokemon, nivel) VALUES ('$fila[id_participante]','$pokemon','$nivel')";
+    //$resultado2 = $mysqli->query($sql2);
 
     //Si se se han guardado los registros se vuelve al index
-    if ($resultado1 > 0){
+    if ($resultado > 0){
         $mysqli->close();
         header("Location:index.php");
 
