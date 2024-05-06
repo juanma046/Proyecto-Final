@@ -44,6 +44,10 @@
                     echo "<img src='pokemon gif/venusaur.gif'>";
                 }elseif($nombre_pokemon==="Charizard"){
                     echo "<img src='pokemon gif/charizard.gif'>";
+                }elseif($nombre_pokemon==="Garchomp"){
+                    echo "<img src='pokemon gif/garchomp.gif'>";
+                }elseif($nombre_pokemon==="Gengar"){
+                    echo "<img src='pokemon gif/gengar.gif'>";
                 }
                 echo "<td>$fila[Jugadas]</td>";
                 echo "<td>$fila[Ganadas]</td>";
