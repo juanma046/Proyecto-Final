@@ -50,5 +50,6 @@
         $mysqli->close();
     ?>
     <p><a href="registrar1.php">Registrar nuevo participante</a></p>
+    <p><a href="enfrentamiento1.php">Combates</a></p>
 </body>
 </html>
