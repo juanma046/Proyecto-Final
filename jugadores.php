@@ -36,6 +36,15 @@
         echo "</tr>";
             echo "<tr>";
                 echo "<td>$nombre_pokemon</td>";
+                if($nombre_pokemon==="Pikachu"){
+                    echo "<img src='pokemon gif/pikachu.gif'>";
+                }elseif($nombre_pokemon==="Blastoise"){
+                    echo "<img src='pokemon gif/blastoise.gif'>";
+                }elseif($nombre_pokemon==="Venusaur"){
+                    echo "<img src='pokemon gif/venusaur.gif'>";
+                }elseif($nombre_pokemon==="Charizard"){
+                    echo "<img src='pokemon gif/charizard.gif'>";
+                }
                 echo "<td>$fila[Jugadas]</td>";
                 echo "<td>$fila[Ganadas]</td>";
                 echo "<td><button class='btn btn-warning'><a href='modificar.php?id=$fila[id_participante]' class='text-white'>Cambiar pokémon</a></button></td>";
