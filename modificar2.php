@@ -19,14 +19,14 @@
 			$id = $_POST["id"];
 			$ID_pokemon = $_POST["pokemon"];
 
-            $sqlpoke = "SELECT Nombre FROM pokémon WHERE id_pokemon LIKE '$ID_pokemon'";
-            $resultadoP = $mysqli->query($sqlpoke);
+            //$sqlpoke = "SELECT Nombre FROM pokémon WHERE id_pokemon LIKE '$ID_pokemon'";
+            //$resultadoP = $mysqli->query($sqlpoke);
 
-            $fila = $resultadoP->fetch_assoc();
-            $nombre_pokemon = $fila['Nombre'];
+            //$fila = $resultadoP->fetch_assoc();
+            //$nombre_pokemon = $fila['Nombre'];
 	
 			//Se repara la sentencia SQL
-			$sql = "UPDATE participantes SET individuo_pokemon='$nombre_pokemon' WHERE id_participante=$id";
+			$sql = "UPDATE participantes SET individuo_pokemon='$ID_pokemon' WHERE id_participante=$id";
 			//Se ejecuta la sentencia y se guarda el resultado en $resultado
 			$resultado = $mysqli->query($sql);
 	
