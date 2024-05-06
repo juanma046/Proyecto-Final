@@ -33,13 +33,14 @@ function actualizarSelect(valor, idSelect) {
 <body>
     <H1>Torneo Pokémon La Campiña</H1>
     <h2>Selecciona a los 2 participantes que se van a enfrentar</h2>
-
+    <form action="enfrentamiento2.php" method="POST">
         <select id="select1" name="participante1" onchange="actualizarSelect(this.value, 'select2')">
         <?php
         while($fila1 = $resultado1->fetch_assoc()){
             echo "<option value='$fila1[id_participante]'>$fila1[Nombre]</option>";
         }
         ?>
+        <br>
         </select>
         <select id="select2" name="participante2" onchange="actualizarSelect(this.value, 'select1')">
         <?php
@@ -48,5 +49,7 @@ function actualizarSelect(valor, idSelect) {
         }
         ?>
         </select>
+        <p><input type="submit" value="Comenzar la batlla"></p>
+        </form>
 </body>
 </html>
