@@ -9,6 +9,20 @@ $sql2 = "SELECT * FROM participantes ORDER BY Ganadas DESC";
 
 $resultado2 = $mysqli->query($sql2);
 ?>
+<script>
+function actualizarSelect(valor, idSelect) {
+    var select = document.getElementById(idSelect);
+    var opciones = select.options;
+    
+    for (var i = 0; i < opciones.length; i++) {
+        if (opciones[i].value === valor) {
+            opciones[i].disabled = true;
+        } else {
+            opciones[i].disabled = false;
+        }
+    }
+}
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,20 +48,5 @@ $resultado2 = $mysqli->query($sql2);
         }
         ?>
         </select>
-
-<script>
-function actualizarSelect(valor, idSelect) {
-    var select = document.getElementById(idSelect);
-    var opciones = select.options;
-    
-    for (var i = 0; i < opciones.length; i++) {
-        if (opciones[i].value === valor) {
-            opciones[i].disabled = true;
-        } else {
-            opciones[i].disabled = false;
-        }
-    }
-}
-</script>
 </body>
 </html>
