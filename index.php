@@ -2,16 +2,15 @@
     require 'conexion.php';
 
     $sql1 = "SELECT * FROM participantes ORDER BY Ganadas DESC";
-
     $resultado1 = $mysqli->query($sql1);
-    //$fila = $resultado1->fetch_assoc();
-    //$ganadas=$fila['Ganadas'];
-    //$jugadas=$fila['Jugadas'];
-    //if ($ganadas==0){
-    //    $media=0;
-    //}else{
-    //    $media=($jugadas/$ganadas)*100;
-    //}
+    $fila = $resultado1->fetch_assoc();
+    $ID_pokemon = $fila['individuo_pokemon'];
+
+    $sqlpoke = "SELECT Nombre FROM pokémon WHERE id_pokemon LIKE '$ID_pokemon'";
+    $resultadoP = $mysqli->query($sqlpoke);
+
+    $filapoke = $resultadoP->fetch_assoc();
+    $nombre_pokemon = $filapoke['Nombre'];
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +36,7 @@
         while($fila1 = $resultado1->fetch_assoc()){
             echo "<tr>";
                 echo "<td>$fila1[Nombre]</td>";
-                echo "<td>$fila1[individuo_pokemon]</td>";
+                echo "<td>$nombre_pokemon</td>";
                 echo "<td>$fila1[Jugadas]</td>";
                 echo "<td>$fila1[Ganadas]</td>";
                 //echo "<td>$media%</td>";

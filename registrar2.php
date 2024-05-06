@@ -15,14 +15,8 @@
     $jugadas = 0;
     $ganadas = 0;
 
-    $sqlpoke = "SELECT Nombre FROM pokémon WHERE id_pokemon LIKE '$ID_pokemon'";
-    $resultadoP = $mysqli->query($sqlpoke);
-
-    $fila = $resultadoP->fetch_assoc();
-    $nombre_pokemon = $fila['Nombre'];
-
     //Se prepara la sentencia SQL
-    $sql1 = "INSERT INTO participantes (Nombre, individuo_pokemon, Jugadas, Ganadas) VALUES ('$nombre','$nombre_pokemon','$jugadas','$ganadas')";
+    $sql1 = "INSERT INTO participantes (Nombre, individuo_pokemon, Jugadas, Ganadas) VALUES ('$nombre','$ID_pokemon','$jugadas','$ganadas')";
 
     //Se ejecuta la sentencia y se guarda el resultado en $resulado1
     $resultado = $mysqli->query($sql1);
