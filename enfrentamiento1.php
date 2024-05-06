@@ -19,19 +19,35 @@ $resultado2 = $mysqli->query($sql2);
 <body>
     <H1>Torneo Pokémon La Campiña</H1>
     <h2>Selecciona a los 2 participantes que se van a enfrentar</h2>
-    <?php
-        echo "<select name='participante1'>";
+
+        <select id="select1" name="participante1" onchange="actualizarSelect(this.value, 'select2')">
+        <?php
         while($fila1 = $resultado1->fetch_assoc()){
             echo "<option value='$fila1[id_participante]'>$fila1[Nombre]</option>";
         }
-        echo "</select>";
-        echo "<select name='participante2'>";
+        ?>
+        </select>
+        <select id="select2" name="participante2" onchange="actualizarSelect(this.value, 'select1')">
+        <?php
         while($fila2 = $resultado2->fetch_assoc()){
             echo "<option value='$fila2[id_participante]'>$fila2[Nombre]</option>";
         }
-        echo "</select>";
-    ?>
+        ?>
+        </select>
 
+<script>
+function actualizarSelect(valor, idSelect) {
+    var select = document.getElementById(idSelect);
+    var opciones = select.options;
     
+    for (var i = 0; i < opciones.length; i++) {
+        if (opciones[i].value === valor) {
+            opciones[i].disabled = true;
+        } else {
+            opciones[i].disabled = false;
+        }
+    }
+}
+</script>
 </body>
 </html>
