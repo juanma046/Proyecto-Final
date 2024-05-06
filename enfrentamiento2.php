@@ -11,8 +11,7 @@
         //Obtengo los datos introducidos en el formulario anterior
         $id_participante1 = $_POST['participante1'];
         $id_participante2 = $_POST['participante2'];
-        echo "<p>$participante1</p>";
-        echo "<p>$participante2</p>";
     ?>
+    <p>Que comience el combate</p>
 </body>
 </html>
