@@ -40,6 +40,7 @@
                 echo "<td>$fila1[Jugadas]</td>";
                 echo "<td>$fila1[Ganadas]</td>";
                 //echo "<td>$media%</td>";
+                echo "<td><button class='btn btn-warning'><a href='jugadores.php?id=$fila1[id_participante]' class='text-white'>$fila1[Nombre]</a></button></td>";
                 echo "<td><button class='btn btn-warning'><a href='modificar.php?id=$fila1[id_participante]' class='text-white'>Cambiar pokémon</a></button></td>";
                 echo "<td><button class='btn btn-danger'><a href='eliminar.php?id=$fila1[id_participante]' class='text-white'>Eliminar</a></button></td>";
             echo "</tr>";
