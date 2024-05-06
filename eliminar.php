@@ -20,8 +20,8 @@
             //Se ejecuta la sentencia y se guarda el resultado en $resultado
             $resultado = $mysqli->query($sql);
 
-            $sql = "DELETE FROM individuo_pokemon WHERE id_participante LIKE '$id_participante'";
-            $resultado = $mysqli->query($sql);
+            //$sql = "DELETE FROM individuo_pokemon WHERE id_participante LIKE '$id_participante'";
+            //$resultado = $mysqli->query($sql);
 
 			//Ahora que ya están elimanados todas las foreign key toca eliminar la primary key
 			$sql = "DELETE FROM participantes WHERE id_participante LIKE '$id_participante'";
