@@ -29,6 +29,10 @@
 			$sql = "UPDATE participantes SET individuo_pokemon='$ID_pokemon' WHERE id_participante=$id";
 			//Se ejecuta la sentencia y se guarda el resultado en $resultado
 			$resultado = $mysqli->query($sql);
+
+			$sql2 = "SELECT * FROM participantes WHERE id_participante LIKE '$id'";
+			$resultado2 = $mysqli->query($sql2);
+			$fila = $resultado2->fetch_assoc();
 	
 			if($resultado > 0){
 				echo "<button type='button' class='btn btn-lg btn-primary' disabled>El registro ha sido editado correctamente</button>";
@@ -37,7 +41,7 @@
 				echo "<p class='bg-danger text-white'>Ha habido un error al modificar un registro</p>";
 			}
 			echo "<br>";
-			echo "<button class='btn btn-primary'><a href='index.php' class='text-white'> Regresar</a></button>";
+			echo "<button class='btn btn-primary'><a href='jugadores.php?id=$fila[id_participante]' class='text-white'> Regresar</a></button>";
 		?>
 	</body>
 </html>
