@@ -56,6 +56,7 @@
             echo "</tr>";
         
         echo "</table>";
+        echo "<a href='index.php'>Volver</a>";
         
         $mysqli->close();
     ?>
