@@ -44,6 +44,7 @@
     <h1>Que comience el combate</h1>
 
     <?php 
+    //Creamos el listado de gifs para todos los pokemons de la lista usando su nombre en la variable $poke1 o $poke2
         echo "<p>$fila1[Nombre]: $poke1 ($tipos1)</p>";
         if($poke1==="Blastoise"){
             echo "<img src='pokemon gif/blastoise.gif'>";
@@ -72,6 +73,23 @@
             echo "<img src='pokemon gif/gengar.gif'>";
         }if($poke2==="Garchomp"){
             echo "<img src='pokemon gif/garchomp.gif'>";
+        }
+    ?>
+
+    <?php 
+    //Creamos la tabla de tipos
+        if($tipos1==="Fuego" && $tipos2==="Planta"){
+            echo "<h2>Ha ganado $poke1</h2>";
+        }elseif($tipos1==="Agua" && $tipos2==="Fuego"){
+            echo "<h2>Ha ganado $poke1</h2>";
+        }elseif($tipos1==="Planta" && $tipos2==="Agua"){
+            echo "<h2>Ha ganado $poke1</h2>";
+        }elseif($tipos1==="Planta" && $tipos2==="Fuego"){
+            echo "<h2>Ha ganado $poke2</h2>";
+        }elseif($tipos1==="Fuego" && $tipos2==="Agua"){
+            echo "<h2>Ha ganado $poke2</h2>";
+        }elseif($tipos1==="Agua" && $tipos2==="Planta"){
+            echo "<h2>Ha ganado $poke2</h2>";
         }
     ?>
 </body>
