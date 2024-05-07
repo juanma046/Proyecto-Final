@@ -45,8 +45,34 @@
 
     <?php 
         echo "<p>$fila1[Nombre]: $poke1 ($tipos1)</p>";
+        if($poke1==="Blastoise"){
+            echo "<img src='pokemon gif/blastoise.gif'>";
+        }if($poke1==="Charizard"){
+            echo "<img src='pokemon gif/charizard.gif'>";
+        }if($poke1==="Venusaur"){
+            echo "<img src='pokemon gif/venusaur.gif'>";
+        }if($poke1==="Pikachu"){
+            echo "<img src='pokemon gif/pikachu.gif'>";
+        }if($poke1==="Gengar"){
+            echo "<img src='pokemon gif/gengar.gif'>";
+        }if($poke1==="Garchomp"){
+            echo "<img src='pokemon gif/garchomp.gif'>";
+        }
         echo "<h2>VS</h2>";
         echo "<p>$fila2[Nombre]: $poke2 ($tipos2)</p>";
+        if($poke2==="Blastoise"){
+            echo "<img src='pokemon gif/blastoise.gif'>";
+        }if($poke2==="Charizard"){
+            echo "<img src='pokemon gif/charizard.gif'>";
+        }if($poke2==="Venusaur"){
+            echo "<img src='pokemon gif/venusaur.gif'>";
+        }if($poke2==="Pikachu"){
+            echo "<img src='pokemon gif/pikachu.gif'>";
+        }if($poke2==="Gengar"){
+            echo "<img src='pokemon gif/gengar.gif'>";
+        }if($poke2==="Garchomp"){
+            echo "<img src='pokemon gif/garchomp.gif'>";
+        }
     ?>
 </body>
 </html>
