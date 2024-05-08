@@ -51,6 +51,13 @@
                 }
                 echo "<td>$fila[Jugadas]</td>";
                 echo "<td>$fila[Ganadas]</td>";
+                if($fila['Ganadas']==0){
+                    $media=0;
+                    echo "<td>$media%</td>";
+                }else{
+                    $media = ($fila['Ganadas'] / $fila['Jugadas']) * 100;
+                    echo "<td>$media%</td>";
+                }
                 echo "<td><button class='btn btn-warning'><a href='modificar.php?id=$fila[id_participante]' class='text-white'>Cambiar pokémon</a></button></td>";
                 echo "<td><button class='btn btn-danger'><a href='eliminar.php?id=$fila[id_participante]' class='text-white'>Eliminar</a></button></td>";
             echo "</tr>";
