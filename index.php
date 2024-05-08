@@ -1,7 +1,7 @@
 <?php
     require 'conexion.php';
 
-    $sql1 = "SELECT * FROM participantes ORDER BY Ganadas DESC";
+    $sql1 = "SELECT * FROM participantes";
     $resultado1 = $mysqli->query($sql1);
     $fila = $resultado1->fetch_assoc();
     $ID_pokemon = $fila['individuo_pokemon'];
