@@ -1,3 +1,20 @@
+<?php
+    //Creamos una funcion para insertar en la tabla enfrentamientos las veces que haya ganado el participante1
+    function gana1($id1,$id2,$fecha,$ganador1,$mysqli){
+        $fecha=date('Y-m-d');
+        $ganador1=$id1;
+        $sql3 = "INSERT INTO enfrentamiento (fecha, id_oponente1, id_oponente2, id_ganador) VALUES ('$fecha','$id1','$id2','$ganador1')";
+        $resultadoF = $mysqli->query($sql3);
+        if ($resultadoF > 0){
+            $mysqli->close();
+            header("Location:index.php");
+        } else {
+            $mysqli->close();
+            echo "<div class='alert alert-danger' role='alert'>Ha habido un error al añadir la partida</div>";
+            echo "<a href='enfrentamiento1.php'>Regresar</a>";
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
