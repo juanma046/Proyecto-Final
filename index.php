@@ -24,6 +24,7 @@
     <?php 
         echo "<h1>Participantes</h1>";
 
+        echo "<div>";
         echo "<table id='tabla'>";
         echo "<tr>";
             echo "<th>Nombre</th>";
@@ -46,6 +47,7 @@
             echo "</tr>";
         }
         echo "</table>";
+        echo "</div>";
         
         $mysqli->close();
     ?>

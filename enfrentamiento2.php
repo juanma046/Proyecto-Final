@@ -3,10 +3,29 @@
     function Fgana1($id1,$id2,$fecha,$ganador1,$mysqli){
         $sql3 = "INSERT INTO enfrentamiento (fecha, id_oponente1, id_oponente2, id_ganador) VALUES ('$fecha','$id1','$id2','$ganador1')";
         $resultadoF = $mysqli->query($sql3);
+        Fupdate1($id1,$id2,$mysqli);
     }
+    //Creamos una funcion para insertar en la tabla enfrentamientos las veces que haya ganado el participante2
     function Fgana2($id1,$id2,$fecha,$ganador2,$mysqli){
         $sql4 = "INSERT INTO enfrentamiento (fecha, id_oponente1, id_oponente2, id_ganador) VALUES ('$fecha','$id1','$id2','$ganador2')";
         $resultadoF = $mysqli->query($sql4);
+        Fupdate2($id1,$id2,$mysqli);
+    }
+    //Craemos una función para hacer un update a la tabla de participantes añadiendoles una mas jugada y también a ganadas si ha ganado el participante1
+    function Fupdate1($id1,$id2,$mysqli){
+        $sql5 = ("UPDATE participantes SET Jugadas = Jugadas + 1 WHERE id_participante = $id1 OR id_participante = $id2");
+        $resultado2 = $mysqli->query($sql5);
+
+        $sql6 = ("UPDATE participantes SET Ganadas = Ganadas + 1 WHERE id_participante = $id1");
+        $resultado2 = $mysqli->query($sql6);
+    }
+    //Craemos una función para hacer un update a la tabla de participantes añadiendoles una mas jugada y también a ganadas si ha ganado el participante2
+    function Fupdate2($id1,$id2,$mysqli){
+        $sql7 = ("UPDATE participantes SET Jugadas = Jugadas + 1 WHERE id_participante = $id1 OR id_participante = $id2");
+        $resultado2 = $mysqli->query($sql7);
+
+        $sql8 = ("UPDATE participantes SET Ganadas = Ganadas + 1 WHERE id_participante = $id2");
+        $resultado2 = $mysqli->query($sql8);
     }
 ?>
 <!DOCTYPE html>
