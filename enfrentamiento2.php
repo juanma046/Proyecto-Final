@@ -20,14 +20,14 @@
         $resultado2 = $mysqli->query($sql6);
 
         // Actualizamos la tabla pokemon para el ganador
-        $sql7 = "UPDATE pokemon SET Jugadas = Jugadas + 1 WHERE id_pokemon = (SELECT individuo_pokemon FROM participantes WHERE id_participante = $id1)";
+        $sql7 = "UPDATE pokémon SET Jugadas = Jugadas + 1 WHERE id_pokemon = (SELECT individuo_pokemon FROM participantes WHERE id_participante = $id1)";
         $resultado3 = $mysqli->query($sql7);
 
-        $sql8 = "UPDATE pokemon SET Ganadas = Ganadas + 1 WHERE id_pokemon = (SELECT individuo_pokemon FROM participantes WHERE id_participante = $id1)";
+        $sql8 = "UPDATE pokémon SET Ganadas = Ganadas + 1 WHERE id_pokemon = (SELECT individuo_pokemon FROM participantes WHERE id_participante = $id1)";
         $resultado4 = $mysqli->query($sql8);
 
         // Actualizamos la tabla pokemon para el otro participante
-        $sql9 = "UPDATE pokemon SET Jugadas = Jugadas + 1 WHERE id_pokemon = (SELECT individuo_pokemon FROM participantes WHERE id_participante = $id2)";
+        $sql9 = "UPDATE pokémon SET Jugadas = Jugadas + 1 WHERE id_pokemon = (SELECT individuo_pokemon FROM participantes WHERE id_participante = $id2)";
         $resultado5 = $mysqli->query($sql9);
     }
     //Craemos una función para hacer un update a la tabla de participantes añadiendoles una mas jugada y también a ganadas si ha ganado el participante2
@@ -39,14 +39,14 @@
         $resultado2 = $mysqli->query($sql8);
 
           // Actualizamos la tabla pokemon para el ganador
-          $sql9 = "UPDATE pokemon SET Jugadas = Jugadas + 1 WHERE id_pokemon = (SELECT individuo_pokemon FROM participantes WHERE id_participante = $id2)";
+          $sql9 = "UPDATE pokémon SET Jugadas = Jugadas + 1 WHERE id_pokemon = (SELECT individuo_pokemon FROM participantes WHERE id_participante = $id2)";
           $resultado3 = $mysqli->query($sql9);
   
-          $sql10 = "UPDATE pokemon SET Ganadas = Ganadas + 1 WHERE id_pokemon = (SELECT individuo_pokemon FROM participantes WHERE id_participante = $id2)";
+          $sql10 = "UPDATE pokémon SET Ganadas = Ganadas + 1 WHERE id_pokemon = (SELECT individuo_pokemon FROM participantes WHERE id_participante = $id2)";
           $resultado4 = $mysqli->query($sql10);
 
            // Actualizamos la tabla pokemon para el otro participante
-        $sql11 = "UPDATE pokemon SET Jugadas = Jugadas + 1 WHERE id_pokemon = (SELECT individuo_pokemon FROM participantes WHERE id_participante = $id1)";
+        $sql11 = "UPDATE pokémon SET Jugadas = Jugadas + 1 WHERE id_pokemon = (SELECT individuo_pokemon FROM participantes WHERE id_participante = $id1)";
         $resultado5 = $mysqli->query($sql11);
     }
 ?>
