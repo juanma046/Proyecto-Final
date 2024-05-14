@@ -14,33 +14,25 @@
 <body>
     <h1>Lista de los Pokémons</h1>
     <?php
-        echo "<div>";
-        echo "<table id='tabla'>";
-        echo "<tr>";
-            echo "<th>Nombre</th>";
-            echo "<th>Tipo</th>";
-            //echo "<th>Jugadas</th>";
-            //echo "<th>Ganadas</th>";
-            echo "<th>Win-Rate</th>";
-        echo "</tr>";
-        
+
         while($fila1 = $resultado1->fetch_assoc()){
-            echo "<tr>";
-                echo "<td>$fila1[Nombre]</td>";
-                echo "<td>$fila1[Tipo]</td>";
+            echo "<div>";
+                echo "Nombre: $fila1[Nombre]";
+                echo "Tipo: $fila1[Tipo]";
                 $jugadas=$fila1['Jugadas'];
                 $ganadas=$fila1['Ganadas'];
                 if($ganadas==0){
                     $media=0;
-                    echo "<td>$media%</td>";
+                    echo " Win-Rate: $media%";
                 }else{
                     $media = ($ganadas / $jugadas) * 100;
-                    echo "<td>$media%</td>";
+                    echo " Win-Rate: $media%";
                 }
-            echo "</tr>";
+    ?>
+                <img src="pokemon gif/<?php echo $fila1['Modelo']; ?>" />
+    <?php
+            echo "</div>";
         }
-        echo "</table>";
-        echo "</div>";
         
         $mysqli->close();
     ?>
