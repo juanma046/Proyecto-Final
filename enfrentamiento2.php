@@ -99,37 +99,17 @@
     <h1>Que comience el combate</h1>
 
     <?php 
-    //Creamos el listado de gifs para todos los pokemons de la lista usando su nombre en la variable $poke1 o $poke2
+    //Creamos la simulación del combate
         echo "<p>$fila1[Nombre]: $poke1 ($tipos1)</p>";
-        if($poke1==="Blastoise"){
-            echo "<img src='pokemon gif/blastoise.gif'>";
-        }if($poke1==="Charizard"){
-            echo "<img src='pokemon gif/charizard.gif'>";
-        }if($poke1==="Venusaur"){
-            echo "<img src='pokemon gif/venusaur.gif'>";
-        }if($poke1==="Pikachu"){
-            echo "<img src='pokemon gif/pikachu.gif'>";
-        }if($poke1==="Gengar"){
-            echo "<img src='pokemon gif/gengar.gif'>";
-        }if($poke1==="Garchomp"){
-            echo "<img src='pokemon gif/garchomp.gif'>";
-        }
+    //Sacamos el gif del pokemon
+    ?>
+        <img src="pokemon gif/<?php echo $filaPK1['Modelo']; ?>" />
+    <?php
+    //Repetimos todo lo anterior para el segundo pokemon
         echo "<h2>VS</h2>";
         echo "<p>$fila2[Nombre]: $poke2 ($tipos2)</p>";
-        if($poke2==="Blastoise"){
-            echo "<img src='pokemon gif/blastoise.gif'>";
-        }if($poke2==="Charizard"){
-            echo "<img src='pokemon gif/charizard.gif'>";
-        }if($poke2==="Venusaur"){
-            echo "<img src='pokemon gif/venusaur.gif'>";
-        }if($poke2==="Pikachu"){
-            echo "<img src='pokemon gif/pikachu.gif'>";
-        }if($poke2==="Gengar"){
-            echo "<img src='pokemon gif/gengar.gif'>";
-        }if($poke2==="Garchomp"){
-            echo "<img src='pokemon gif/garchomp.gif'>";
-        }
     ?>
+        <img src="pokemon gif/<?php echo $filaPK2['Modelo']; ?>" />
 
     <?php 
     //Creamos la tabla de tipos
