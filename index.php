@@ -1,7 +1,7 @@
 <?php
     require 'conexion.php';
 
-    $sql1 = "SELECT * FROM participantes";
+    $sql1 = "SELECT * FROM participantes ORDER BY Ganadas DESC";
     $resultado1 = $mysqli->query($sql1);
     $fila = $resultado1->fetch_assoc();
     $ID_pokemon = $fila['individuo_pokemon'];
@@ -31,7 +31,7 @@
             //echo "<th>Pokémon</th>";
             //echo "<th>Jugadas</th>";
             //echo "<th>Ganadas</th>";
-            echo "<th>Porcentaje de Victorias</th>";
+            echo "<th>Puesto</th>";
         echo "</tr>";
         
         while($fila1 = $resultado1->fetch_assoc()){
@@ -41,13 +41,6 @@
                 //echo "<td>$fila1[Jugadas]</td>";
                 //echo "<td>$fila1[Ganadas]</td>";
                 echo "<td><button class='btn btn-warning'><a href='jugadores.php?id=$fila1[id_participante]' class='text-white'>$fila1[Nombre]</a></button></td>";
-                if($fila1['Ganadas']==0){
-                    $media=0;
-                    echo "<td>$media%</td>";
-                }else{
-                    $media = ($fila1['Ganadas'] / $fila1['Jugadas']) * 100;
-                    echo "<td>$media%</td>";
-                }
                 //echo "<td><button class='btn btn-warning'><a href='modificar.php?id=$fila1[id_participante]' class='text-white'>Cambiar pokémon</a></button></td>";
                 //echo "<td><button class='btn btn-danger'><a href='eliminar.php?id=$fila1[id_participante]' class='text-white'>Eliminar</a></button></td>";
             echo "</tr>";
