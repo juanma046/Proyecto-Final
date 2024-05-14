@@ -50,6 +50,7 @@
         
         $mysqli->close();
     ?>
+    <p><a href="pokemon.php">Lista de pokémons</a></p>
     <p><a href="registrar1.php">Registrar nuevo participante</a></p>
     <p><a href="enfrentamiento1.php">Combates</a></p>
 </body>
