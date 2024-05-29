@@ -4,8 +4,9 @@
 }
 
 body{
-    background-image: url("imagenes/fondo.jpg");
+    background-image: url("imagenes/fondo.png");
     background-size: cover;
+	background-repeat: no-repeat;
 	background-attachment: fixed;
     font-family: "Bitstream Vera Serif Bold", serif
 }
@@ -26,10 +27,6 @@ main {
 	
 }
 
-.video {
-	width: 20px;
-}
-
 main h2{
     padding:20px;
 }
@@ -45,4 +42,8 @@ footer{
 
 h1{
     padding: 20px;
+}
+
+.escudo {
+	width: 10%;
 }

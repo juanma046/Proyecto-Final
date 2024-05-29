@@ -26,8 +26,8 @@
     <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class='container-fluid'>
-            <img src="imagenes/escudo.svg" alt="">
-        <h1>SIMULADOR COMBATES POKÉMON</h1>
+            <img src="imagenes/escudo.svg" class="escudo">
+            <h1>SIMULADOR COMBATES POKÉMON</h1>
         </div>
     </nav>
     </header>
