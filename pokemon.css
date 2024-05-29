@@ -4,7 +4,7 @@
 }
 
 body{
-    background-image: url("imagenes/fondo2.jpg");
+    background-image: url("imagenes/fondo.jpg");
     background-size: cover;
 	background-attachment: fixed;
     font-family: "Bitstream Vera Serif Bold", serif
@@ -24,4 +24,25 @@ main {
 	width:100%;
     margin-bottom: 20px;
 	
+}
+
+.video {
+	width: 20px;
+}
+
+main h2{
+    padding:20px;
+}
+
+footer{
+    color:white;
+    width:100%;
+    background: #353534;
+    padding:20px;
+    margin-top: 20px;
+    margin-bottom:20px;
+}
+
+h1{
+    padding: 20px;
 }

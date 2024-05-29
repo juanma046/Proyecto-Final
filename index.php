@@ -22,10 +22,24 @@
     <title>Torneo de Pokémon</title>
 </head>
 <body>
-<div class='contenedor'> <!-- Le damos un tamaño medio de 4 a cada columna -->
-    <?php 
-    echo "<main>";
-        echo "<h1>Participantes</h1>";
+<div class='contenedor'> <!-- Le damos un tamaño medio de 4 a cada columna --> 
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class='container-fluid'>
+            <img src="imagenes/escudo.svg" alt="">
+        <h1>SIMULADOR COMBATES POKÉMON</h1>
+        </div>
+    </nav>
+    </header>
+    <main>
+
+    <div class="video">
+        <video width="1000" height="500" autoplay loop muted>
+            <source src=video/pokemon.mp4 type="video/mp4">
+        </video>
+    </div>
+    <?php
+        echo "<h2>Participantes</h2>";
 
         echo "<div>";
         echo "<table id='tabla'>";
@@ -57,6 +71,10 @@
     <p><a href="pokemon.php">Lista de pokémons</a></p>
     <p><a href="registrar1.php">Registrar nuevo participante</a></p>
     <p><a href="enfrentamiento1.php">Combates</a></p>
+
+    <footer>
+        <h2>Hola</h2>
+    </footer>
 </div>
 </body>
 </html>
