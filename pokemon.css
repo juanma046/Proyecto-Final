@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+	margin: 0;
+}
+
+body{
+    background-image: url("imagenes/fondo.jpg");
+    background-size: cover;
+	background-attachment: fixed;
+    font-family: "Bitstream Vera Serif Bold", serif
+}
+
+.contenedor{
+	max-width:1000px;
+	width:90%;
+	margin:auto;
+}
+
+main {
+	margin-top: 200px;
+	color: #fff;
+    background:#353534;
+	padding: 20px;
+	width:100%;
+    margin-bottom: 20px;
+	
+}

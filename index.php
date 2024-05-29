@@ -18,10 +18,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pokemon.css">
     <title>Torneo de Pokémon</title>
 </head>
 <body>
+<div class='contenedor'> <!-- Le damos un tamaño medio de 4 a cada columna -->
     <?php 
+    echo "<main>";
         echo "<h1>Participantes</h1>";
 
         echo "<div>";
@@ -47,11 +50,13 @@
         }
         echo "</table>";
         echo "</div>";
+    echo "</main>";
         
         $mysqli->close();
     ?>
     <p><a href="pokemon.php">Lista de pokémons</a></p>
     <p><a href="registrar1.php">Registrar nuevo participante</a></p>
     <p><a href="enfrentamiento1.php">Combates</a></p>
+</div>
 </body>
 </html>
