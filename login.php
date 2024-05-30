@@ -8,9 +8,9 @@
 <body>
     <center>
         <form action="loguear.php" method="POST">
-            <input type="text" name="usuario">
+            <input type="text" name="usuario" placeholder="Ingresa tu usuario">
             <br><br>
-            <input type="password" name="clave">
+            <input type="password" name="clave" placeholder="Introduce tu clave">
             <br><br>
             <input type="submit" value="Iniciar Sesión">
         </form>
