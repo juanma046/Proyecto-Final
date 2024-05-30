@@ -3,6 +3,8 @@
 
     $sql1 = "SELECT * FROM pokémon ORDER BY Ganadas DESC";
     $resultado1 = $mysqli->query($sql1);
+    $fila = $resultado->fetch_assoc();
+    $nombre = $fila["Nombre"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,24 +24,40 @@
                         <div class="carousel slide" id="mi-carousel" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <?php 
-                                        while($fila1 = $resultado1->fetch_assoc()){
-                                    ?>
-                                        <img src="pokemon gif/<?php echo $fila1['Modelo']; ?>" />
-                                    <?php         
-                                    }
-                                    ?>
-                                        
-                                    
-                                    <img class="img-fluid" src="pokemon gif/blastoise.gif" alt="">
+                                <div class="card" style="width: 18 rem">
+                                            <img class="card-img-top" src="imagenes/fuerza.jpg"> <!-- Agregamos una imagen superior usando img-top -->
+                                        <div class="card-body"> <!-- Rellenamos la card con la clase body -->
+                                            <h4 class="card-title">Fuerza</h4> <!-- Le ponemos un título -->
+                                <!-- Completamos el resto con un texto -->
+                                            <p class="card-text">Las builds de fuerza son para los jugadores que sean amantes del daño masivo y que les guste llevar armaduras pesadas para aguantar todo tipo de daños. Por lo general solo se necesita subir las stats de fuerza y aguante.</p>
+                                <!-- Agregamos un botón con la clase btn-outline-secondary para que sea transparente y tenga un determinado color de borde -->
+                                        <button type="button" class="btn btn-outline-secondary"><a href="https://www.youtube.com/watch?v=9V1OY9d6La8&ab_channel=Crozyn">Gameplay</a></button>
+                                        </div>
+                                        </div>
                                 </div>
                                 <div class="carousel-item" data-bs-interval="5000">
-                                    
-                                    <img class="img-fluid" src="pokemon gif/charizard.gif" alt="">
+                                        <div class="card" style="width: 18 rem">
+                                            <img class="card-img-top" src="imagenes/fuerza.jpg"> <!-- Agregamos una imagen superior usando img-top -->
+                                        <div class="card-body"> <!-- Rellenamos la card con la clase body -->
+                                            <h4 class="card-title">Fuerza</h4> <!-- Le ponemos un título -->
+                                <!-- Completamos el resto con un texto -->
+                                            <p class="card-text">Las builds de fuerza son para los jugadores que sean amantes del daño masivo y que les guste llevar armaduras pesadas para aguantar todo tipo de daños. Por lo general solo se necesita subir las stats de fuerza y aguante.</p>
+                                <!-- Agregamos un botón con la clase btn-outline-secondary para que sea transparente y tenga un determinado color de borde -->
+                                        <button type="button" class="btn btn-outline-secondary"><a href="https://www.youtube.com/watch?v=9V1OY9d6La8&ab_channel=Crozyn">Gameplay</a></button>
+                                        </div>
+                                        </div>
                                 </div>
                                 <div class="carousel-item">
-                                    
-                                    <img class="img-fluid" src="pokemon gif/pikachu.gif" alt="">
+                                <div class="card" style="width: 18 rem">
+                                            <img class="card-img-top" src="imagenes/fuerza.jpg"> <!-- Agregamos una imagen superior usando img-top -->
+                                        <div class="card-body"> <!-- Rellenamos la card con la clase body -->
+                                            <h4 class="card-title">Fuerza</h4> <!-- Le ponemos un título -->
+                                <!-- Completamos el resto con un texto -->
+                                            <p class="card-text">Las builds de fuerza son para los jugadores que sean amantes del daño masivo y que les guste llevar armaduras pesadas para aguantar todo tipo de daños. Por lo general solo se necesita subir las stats de fuerza y aguante.</p>
+                                <!-- Agregamos un botón con la clase btn-outline-secondary para que sea transparente y tenga un determinado color de borde -->
+                                        <button type="button" class="btn btn-outline-secondary"><a href="https://www.youtube.com/watch?v=9V1OY9d6La8&ab_channel=Crozyn">Gameplay</a></button>
+                                        </div>
+                                        </div>
                                 </div>
                             </div>
         
