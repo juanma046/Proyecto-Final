@@ -98,103 +98,106 @@
         $tipos2 = $filaPK2['Tipo'];
   
     ?>
+    <div >
     <h1>Que comience el combate</h1>
 
-    <?php 
-    //Creamos la simulación del combate
-        echo "<p>$fila1[Nombre]: $poke1 ($tipos1)</p>";
-    //Sacamos el gif del pokemon
-    ?>
-        <img src="pokemon gif/<?php echo $filaPK1['Modelo']; ?>" />
-    <?php
-    //Repetimos todo lo anterior para el segundo pokemon
-        echo "<h2>VS</h2>";
-        echo "<p>$fila2[Nombre]: $poke2 ($tipos2)</p>";
-    ?>
-        <img src="pokemon gif/<?php echo $filaPK2['Modelo']; ?>" />
+<?php 
+//Creamos la simulación del combate
+    echo "<p>$fila1[Nombre]: $poke1 ($tipos1)</p>";
+//Sacamos el gif del pokemon
+?>
+    <img src="pokemon gif/<?php echo $filaPK1['Modelo']; ?>" />
+<?php
+//Repetimos todo lo anterior para el segundo pokemon
+    echo "<h2>VS</h2>";
+    echo "<p>$fila2[Nombre]: $poke2 ($tipos2)</p>";
+?>
+    <img src="pokemon gif/<?php echo $filaPK2['Modelo']; ?>" />
 
-    <?php 
-    //Creamos la tabla de tipos
-        if($tipos1==="Fuego" && $tipos2==="Planta"){
-            echo "<h2>Ha ganado $fila1[Nombre]</h2>";
+<?php 
+//Creamos la tabla de tipos
+    if($tipos1==="Fuego" && $tipos2==="Planta"){
+        echo "<h2>Ha ganado $fila1[Nombre]</h2>";
+        //Creamos la variable de ganador
+        $ganador1=$id1;
+        //Llamamos a la función con los datos necesarios
+        Fgana1($id1,$id2,$fecha,$ganador1,$mysqli);
+    }elseif($tipos1==="Agua" && $tipos2==="Fuego"){
+        echo "<h2>Ha ganado $fila1[Nombre]</h2>";
+        //Creamos la variable de ganador
+        $ganador1=$id1;
+        //Llamamos a la función con los datos necesarios
+        Fgana1($id1,$id2,$fecha,$ganador1,$mysqli);
+    }elseif($tipos1==="Planta" && $tipos2==="Agua"){
+        echo "<h2>Ha ganado $fila1[Nombre]</h2>";
+        //Creamos la variable de ganador
+        $ganador1=$id1;
+        //Llamamos a la función con los datos necesarios
+        Fgana1($id1,$id2,$fecha,$ganador1,$mysqli);
+    }elseif($tipos1==="Electrico" && $tipos2==="Agua"){
+        echo "<h2>Ha ganado $fila1[Nombre]</h2>";
+        //Creamos la variable de ganador
+        $ganador1=$id1;
+        //Llamamos a la función con los datos necesarios
+        Fgana1($id1,$id2,$fecha,$ganador1,$mysqli);
+    }elseif($tipos1==="Planta" && $tipos2==="Fuego"){
+        echo "<h2>Ha ganado $fila2[Nombre]</h2>";
+        //Creamos la variable de ganador
+        $ganador2=$id2;
+        //Llamamos a la función con los datos necesarios
+        Fgana2($id1,$id2,$fecha,$ganador2,$mysqli);
+    }elseif($tipos1==="Fuego" && $tipos2==="Agua"){
+        echo "<h2>Ha ganado $fila2[Nombre]</h2>";
+        //Creamos la variable de ganador
+        $ganador2=$id2;
+        //Llamamos a la función con los datos necesarios
+        Fgana2($id1,$id2,$fecha,$ganador2,$mysqli);
+    }elseif($tipos1==="Agua" && $tipos2==="Planta"){
+        echo "<h2>Ha ganado $fila2[Nombre]</h2>";
+        //Creamos la variable de ganador
+        $ganador2=$id2;
+        //Llamamos a la función con los datos necesarios
+        Fgana2($id1,$id2,$fecha,$ganador2,$mysqli);
+    }elseif($tipos1==="Agua" && $tipos2==="Electrico"){
+        echo "<h2>Ha ganado $fila2[Nombre]</h2>";
+        //Creamos la variable de ganador
+        $ganador2=$id2;
+        //Llamamos a la función con los datos necesarios
+        Fgana2($id1,$id2,$fecha,$ganador2,$mysqli);
+    }elseif($tipos1===$tipos2){
+        $ganador = rand(1, 2);
+        if ($ganador == 1) {
+            echo "¡El ganador es $fila1[Nombre]!";
             //Creamos la variable de ganador
             $ganador1=$id1;
             //Llamamos a la función con los datos necesarios
-            Fgana1($id1,$id2,$fecha,$ganador1,$mysqli);
-        }elseif($tipos1==="Agua" && $tipos2==="Fuego"){
-            echo "<h2>Ha ganado $fila1[Nombre]</h2>";
-            //Creamos la variable de ganador
-            $ganador1=$id1;
-            //Llamamos a la función con los datos necesarios
-            Fgana1($id1,$id2,$fecha,$ganador1,$mysqli);
-        }elseif($tipos1==="Planta" && $tipos2==="Agua"){
-            echo "<h2>Ha ganado $fila1[Nombre]</h2>";
-            //Creamos la variable de ganador
-            $ganador1=$id1;
-            //Llamamos a la función con los datos necesarios
-            Fgana1($id1,$id2,$fecha,$ganador1,$mysqli);
-        }elseif($tipos1==="Electrico" && $tipos2==="Agua"){
-            echo "<h2>Ha ganado $fila1[Nombre]</h2>";
-            //Creamos la variable de ganador
-            $ganador1=$id1;
-            //Llamamos a la función con los datos necesarios
-            Fgana1($id1,$id2,$fecha,$ganador1,$mysqli);
-        }elseif($tipos1==="Planta" && $tipos2==="Fuego"){
-            echo "<h2>Ha ganado $fila2[Nombre]</h2>";
+        Fgana1($id1,$id2,$fecha,$ganador1,$mysqli);
+        } else {
+            echo "¡El ganador es $fila2[Nombre]!";
             //Creamos la variable de ganador
             $ganador2=$id2;
             //Llamamos a la función con los datos necesarios
             Fgana2($id1,$id2,$fecha,$ganador2,$mysqli);
-        }elseif($tipos1==="Fuego" && $tipos2==="Agua"){
-            echo "<h2>Ha ganado $fila2[Nombre]</h2>";
-            //Creamos la variable de ganador
-            $ganador2=$id2;
-            //Llamamos a la función con los datos necesarios
-            Fgana2($id1,$id2,$fecha,$ganador2,$mysqli);
-        }elseif($tipos1==="Agua" && $tipos2==="Planta"){
-            echo "<h2>Ha ganado $fila2[Nombre]</h2>";
-            //Creamos la variable de ganador
-            $ganador2=$id2;
-            //Llamamos a la función con los datos necesarios
-            Fgana2($id1,$id2,$fecha,$ganador2,$mysqli);
-        }elseif($tipos1==="Agua" && $tipos2==="Electrico"){
-            echo "<h2>Ha ganado $fila2[Nombre]</h2>";
-            //Creamos la variable de ganador
-            $ganador2=$id2;
-            //Llamamos a la función con los datos necesarios
-            Fgana2($id1,$id2,$fecha,$ganador2,$mysqli);
-        }elseif($tipos1===$tipos2){
-            $ganador = rand(1, 2);
-            if ($ganador == 1) {
-                echo "¡El ganador es $fila1[Nombre]!";
-                //Creamos la variable de ganador
-                $ganador1=$id1;
-                //Llamamos a la función con los datos necesarios
-            Fgana1($id1,$id2,$fecha,$ganador1,$mysqli);
-            } else {
-                echo "¡El ganador es $fila2[Nombre]!";
-                //Creamos la variable de ganador
-                $ganador2=$id2;
-                //Llamamos a la función con los datos necesarios
-                Fgana2($id1,$id2,$fecha,$ganador2,$mysqli);
-            }
-        }else{
-            $ganador = rand(1, 2);
-            if ($ganador == 1) {
-                echo "<h2>¡El ganador es $fila1[Nombre]!</h2>";
-                //Creamos la variable de ganador
-                $ganador1=$id1;
-                //Llamamos a la función con los datos necesarios
-            Fgana1($id1,$id2,$fecha,$ganador1,$mysqli);
-            } else {
-                echo "<h2>¡El ganador es $fila2[Nombre]</h2>";
-                //Creamos la variable de ganador
-                $ganador2=$id2;
-                //Llamamos a la función con los datos necesarios
-                Fgana2($id1,$id2,$fecha,$ganador2,$mysqli);
-            }
         }
-    ?>
-    <a href="index.php">Volver</a>
+    }else{
+        $ganador = rand(1, 2);
+        if ($ganador == 1) {
+            echo "<h2>¡El ganador es $fila1[Nombre]!</h2>";
+            //Creamos la variable de ganador
+            $ganador1=$id1;
+            //Llamamos a la función con los datos necesarios
+        Fgana1($id1,$id2,$fecha,$ganador1,$mysqli);
+        } else {
+            echo "<h2>¡El ganador es $fila2[Nombre]</h2>";
+            //Creamos la variable de ganador
+            $ganador2=$id2;
+            //Llamamos a la función con los datos necesarios
+            Fgana2($id1,$id2,$fecha,$ganador2,$mysqli);
+        }
+    }
+?>
+<a href="index.php">Volver</a>
+    </div>
+    
 </body>
 </html>
