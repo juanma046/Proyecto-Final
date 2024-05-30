@@ -58,7 +58,7 @@
             echo "</tr>";
         
         echo "</table>";
-        echo "<a href='index.php'>Volver</a>";
+        echo "<a href='index-cliente.php'>Volver</a>";
         
         $mysqli->close();
     }

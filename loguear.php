@@ -19,7 +19,7 @@
         }else{
             $_SESSION['username'] = $usuario;
             $mysqli->close();
-            header("Location:usuario/index-cliente.php");
+            header("Location:index-cliente.php");
         }
 
         // Si no se ha guardado los registros mostramos un mensaje de error

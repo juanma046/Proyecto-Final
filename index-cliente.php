@@ -6,17 +6,14 @@
     if(!isset($usuario)){
         header("location:login.php");
     }else{
-        echo "<h1>Bienvenido $usuario</h1>";
     $sql1 = "SELECT * FROM participantes ORDER BY Ganadas DESC";
     $resultado1 = $mysqli->query($sql1);
+    $fila1 = $resultado1->fetch_assoc();
+
+    $sql = "SELECT * FROM participantes WHERE Nombre = '$usuario'";
+    $resultado = $mysqli->query($sql);
     $fila = $resultado1->fetch_assoc();
-    $ID_pokemon = $fila['individuo_pokemon'];
 
-    $sqlpoke = "SELECT Nombre FROM pokémon WHERE id_pokemon LIKE '$ID_pokemon'";
-    $resultadoP = $mysqli->query($sqlpoke);
-
-    $filapoke = $resultadoP->fetch_assoc();
-    $nombre_pokemon = $filapoke['Nombre'];
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +40,7 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0"><!--me-auto es para centrar horizontalmente contenido de nivel de bloque de ancho fijo, es decir, contenido que tiene display: block y un conjunto width , configurando los márgenes horizontales en auto -->
                         <li class="nav-item"><a href="pokemon.php" class="nav-link">Lista de Pokemons</a></li>
                         <li class="nav-item"><a href="enfrentamiento1.php" class="nav-link">Simulador de Combate</a></li>
-                        <li class="nav-item"><a href="https://www.youtube.com/watch?v=puc-HK3atGQ&ab_channel=MiqueCaleb" class="nav-link">Historia</a></li>
+                        <li class="nav-item"><a href="salir.php" class="nav-link">Cerrar Sesión</a></li>
                         <li class="nav-item dropdown">
                             <a 
                                 href="#" 
@@ -103,7 +100,7 @@
         $mysqli->close();
     ?>
     <p><a href="pokemon.php">Lista de pokémons</a></p>
-    <p><a href="enfrentamiento1.php">Combates</a></p>
+    <p><a href="combate usuario.php?id=">Combates</a></p>
 
     <footer>
         <h2>Hola</h2>
