@@ -21,11 +21,10 @@
     $fila = $resultado->fetch_assoc();
     $ID_pokemon = $fila['individuo_pokemon'];
 
-    $sqlpoke = "SELECT * FROM pokémon WHERE id_pokemon LIKE '$ID_pokemon'";
+    $sqlpoke = "SELECT Nombre FROM pokémon WHERE id_pokemon LIKE '$ID_pokemon'";
             $resultadoP = $mysqli->query($sqlpoke);
             $fila_poke = $resultadoP->fetch_assoc();
             $nombre_pokemon = $fila_poke['Nombre'];
-            $modelo = $fila_poke['Modelo'];
 
         echo "<h1>$fila[Nombre]</h1>";
 
@@ -38,9 +37,19 @@
         echo "</tr>";
             echo "<tr>";
                 echo "<td>$nombre_pokemon</td>";
-    ?> 
-        <img src="pokemon gif/<?php echo $modelo; ?>" />
-    <?php
+                if($nombre_pokemon==="Pikachu"){
+                    echo "<img src='pokemon gif/pikachu.gif'>";
+                }elseif($nombre_pokemon==="Blastoise"){
+                    echo "<img src='pokemon gif/blastoise.gif'>";
+                }elseif($nombre_pokemon==="Venusaur"){
+                    echo "<img src='pokemon gif/venusaur.gif'>";
+                }elseif($nombre_pokemon==="Charizard"){
+                    echo "<img src='pokemon gif/charizard.gif'>";
+                }elseif($nombre_pokemon==="Garchomp"){
+                    echo "<img src='pokemon gif/garchomp.gif'>";
+                }elseif($nombre_pokemon==="Gengar"){
+                    echo "<img src='pokemon gif/gengar.gif'>";
+                }
                 echo "<td>$fila[Jugadas]</td>";
                 echo "<td>$fila[Ganadas]</td>";
                 if($fila['Ganadas']==0){
