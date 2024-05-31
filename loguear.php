@@ -1,31 +1,34 @@
 <?php
-    require 'conexion.php';
-    session_start();
+require 'conexion.php';
+session_start();
 
+if (isset($_POST['usuario']) && isset($_POST['clave'])) {
     $usuario = $_POST['usuario'];
     $clave = $_POST['clave'];
 
-    $sql = "SELECT rol FROM participantes where Nombre = '$usuario' and Contraseña = '$clave'";
+    // Consulta SQL simple
+    $sql = "SELECT Nombre, Contraseña, rol FROM participantes WHERE Nombre = '$usuario' AND Contraseña = '$clave'";
     $resultado = $mysqli->query($sql);
-    $array = mysqli_fetch_array($resultado);
 
-    if ($resultado > 0){
+    if ($resultado > 0) {
         $fila = $resultado->fetch_assoc();
-        $rol = $fila['rol'];
-        if ($rol == "admin"){
-            $_SESSION['username'] = $usuario;
-            $mysqli->close();
-            header("Location:index.php");
-        }else{
-            $_SESSION['username'] = $usuario;
-            $mysqli->close();
-            header("Location:index-cliente.php");
-        }
+        $_SESSION['username'] = $fila['Nombre'];
+        $_SESSION['rol'] = $fila['rol'];
 
-        // Si no se ha guardado los registros mostramos un mensaje de error
+        if ($fila['rol'] == "admin") {
+            header("Location: index.php");
+        } else {
+            header("Location: index-cliente.php");
+        }
+        exit();
     } else {
-        $mysqli->close();
-        echo "<div class='alert alert-danger' role='alert'>Datos Incorrectos</div>";
-        header("Location:login.php");
+        // Credenciales incorrectas
+        header("Location: login.php?error=Datos%20Incorrectos");
+        exit();
     }
+} else {
+    // Petición no válida
+    header("Location: login.php");
+    exit();
+}
 ?>
