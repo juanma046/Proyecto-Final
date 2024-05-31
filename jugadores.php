@@ -7,12 +7,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pokemon.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
     <title>Jugadores</title>
 </head>
 <body>
 <?php
     //Recogemos el id del participante
     $id = $_GET['id'];
+    if(!isset($id)){
+        header("location:login.php");
+    }else{
     //Creamos una consulta para tener toda la información referente a este participante
     $sql = "SELECT * FROM participantes WHERE id_participante=$id";
 	$resultado = $mysqli->query($sql);
@@ -27,37 +31,50 @@
             $nombre_pokemon = $fila_poke['Nombre'];
             $modelo = $fila_poke['Modelo'];
 
-        echo "<h1>$fila[Nombre]</h1>";
-
-        echo "<table id='tabla'>";
-        echo "<tr>";
-            echo "<th>Pokémon</th>";
-            echo "<th>Jugadas</th>";
-            echo "<th>Ganadas</th>";
-            echo "<th>Porcentaje de Victorias</th>";
-        echo "</tr>";
-            echo "<tr>";
-                echo "<td>$nombre_pokemon</td>";
-    ?> 
-        <img src="pokemon gif/<?php echo $modelo; ?>" />
-    <?php
-                echo "<td>$fila[Jugadas]</td>";
-                echo "<td>$fila[Ganadas]</td>";
-                if($fila['Ganadas']==0){
-                    $media=0;
-                    echo "<td>$media%</td>";
-                }else{
-                    $media = ($fila['Ganadas'] / $fila['Jugadas']) * 100;
-                    echo "<td>$media%</td>";
-                }
-                echo "<td><button class='btn btn-warning'><a href='modificar.php?id=$fila[id_participante]' class='text-white'>Cambiar pokémon</a></button></td>";
-                echo "<td><button class='btn btn-danger'><a href='eliminar.php?id=$fila[id_participante]' class='text-white'>Eliminar</a></button></td>";
-            echo "</tr>";
+            if($fila['Ganadas']==0){
+                $media=0;
+                $nombre = $fila['Nombre'];
+    ?>
+    <div class="carta">
+    <div class="card"><!-- Creamos la card utilizando la clase card -->
+                    <img src="pokemon gif/<?php echo $modelo; ?>" /> <!-- Agregamos la imagen superior usando img-top -->
+            <div class="card-body"> <!-- Rellenamos la card con la clase body -->
+                    <h1 class="card-title"><?php echo $nombre; ?></h1>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><p>Partidas Jugadas<?php echo $fila['Jugadas'];?></p></li>
+                <li class="list-group-item"><p>Partidas Jugadas<?php echo $fila['Ganadas'];?></p></li>
+                <li class="list-group-item"><p>Partidas Jugadas<?php echo $media?></p></li>
+            </ul>
+            </div>
+        </div>
+    <?php     
+        }else{
+            $media = ($fila['Ganadas'] / $fila['Jugadas']) * 100;
+            $nombre = $fila['Nombre'];
+    ?>
+    <div class="carta">
+    <div class="card"><!-- Creamos la card utilizando la clase card -->
+                    <img src="pokemon gif/<?php echo $modelo; ?>" /> <!-- Agregamos la imagen superior usando img-top -->
+            <div class="card-body"> <!-- Rellenamos la card con la clase body -->
+                    <h1 class="card-title"><?php echo $nombre; ?></h1>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><p>Partidas Jugadas<?php echo $fila['Jugadas'];?></p></li>
+                <li class="list-group-item"><p>Partidas Jugadas<?php echo $fila['Ganadas'];?></p></li>
+                <li class="list-group-item"><p>Partidas Jugadas<?php echo $media?></p></li>
+            </ul>
+            <button>Hol</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <?php     
+}
+    
+    echo "<a href='index.php'>Volver</a>";
         
-        echo "</table>";
-        echo "<a href='index.php'>Volver</a>";
-        
-        $mysqli->close();
+    $mysqli->close();
+    }
     ?>
 </body>
+<script src="bootstrap.bundle.min.js"></script>
 </html>

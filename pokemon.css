@@ -96,6 +96,31 @@ h1{
     margin: 20px;
 }
 
-.clasf {
-    width: 100%;
+.carta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+.card {
+    width: 500px;
+}
+
+.card img{
+    width: 500px;
+    margin-bottom: 30px;
+}
+
+.card-body {
+    background-color: #353534;
+}
+
+.card a{
+    color: white;
+    text-decoration: none;
+}
+
+.card a:hover{
+    color:black
 }

@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pokemon.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
     <title>Jugadores</title>
 </head>
 <body>
@@ -30,38 +31,41 @@
             $nombre_pokemon = $fila_poke['Nombre'];
             $modelo = $fila_poke['Modelo'];
 
-        echo "<h1>$fila[Nombre]</h1>";
-
-        echo "<table id='tabla'>";
-        echo "<tr>";
-            echo "<th>Pokémon</th>";
-            echo "<th>Jugadas</th>";
-            echo "<th>Ganadas</th>";
-            echo "<th>Porcentaje de Victorias</th>";
-        echo "</tr>";
-            echo "<tr>";
-                echo "<td>$nombre_pokemon</td>";
-    ?> 
-        <img src="pokemon gif/<?php echo $modelo; ?>" />
-    <?php
-                echo "<td>$fila[Jugadas]</td>";
-                echo "<td>$fila[Ganadas]</td>";
-                if($fila['Ganadas']==0){
-                    $media=0;
-                    echo "<td>$media%</td>";
-                }else{
-                    $media = ($fila['Ganadas'] / $fila['Jugadas']) * 100;
-                    echo "<td>$media%</td>";
-                }
-                //echo "<td><button class='btn btn-warning'><a href='modificar.php?id=$fila[id_participante]' class='text-white'>Cambiar pokémon</a></button></td>";
-                //echo "<td><button class='btn btn-danger'><a href='eliminar.php?id=$fila[id_participante]' class='text-white'>Eliminar</a></button></td>";
-            echo "</tr>";
+            if($fila['Ganadas']==0){
+                $media=0;
+                echo "<h1>$fila[Nombre]</h1>";
+    ?>
+        <div class="card"><!-- Creamos la card utilizando la clase card -->
+                    <img src="pokemon gif/<?php echo $modelo; ?>" /> <!-- Agregamos la imagen superior usando img-top -->
+            <div class="card-body"> <!-- Rellenamos la card con la clase body -->
+                    <h1 class="card-title"><?php echo "<h1>$nombre_pokemon<h1>"; ?></h1> <!-- Le ponemos un título -->
+                                <!-- Completamos el resto con un texto -->
+                    <p class="card-text">Partidas Jugadas<?php echo $fila['Jugadas']; echo "<br>";echo "Partidas Ganadas $fila[Ganadas]"; echo "<br>"; echo "Prcentaje de Victoria $media" ?></p>
+                                <!-- Agregamos un botón con la clase btn-outline-secondary para que sea transparente y tenga un determinado color de borde -->
+            </div>
+        </div>
+    <?php     
+            }else{
+                $media = ($fila['Ganadas'] / $fila['Jugadas']) * 100;
+                echo "<h1>$fila[Nombre]</h1>";
+    ?>
+        <div class="card"><!-- Creamos la card utilizando la clase card -->
+                    <img src="pokemon gif/<?php echo $modelo; ?>" /> <!-- Agregamos la imagen superior usando img-top -->
+            <div class="card-body"> <!-- Rellenamos la card con la clase body -->
+                    <h1 class="card-title"><?php echo "<h1>$nombre_pokemon<h1>"; ?></h1> <!-- Le ponemos un título -->
+                                <!-- Completamos el resto con un texto -->
+                    <p class="card-text">Partidas Jugadas<?php echo $fila['Jugadas']; echo "<br>";echo "Partidas Ganadas $fila[Ganadas]"; echo "<br>"; echo "Prcentaje de Victoria $media" ?></p>
+                                <!-- Agregamos un botón con la clase btn-outline-secondary para que sea transparente y tenga un determinado color de borde -->
+            </div>
+        </div>
+    <?php     
+}
+    
+    echo "<a href='index-cliente.php'>Volver</a>";
         
-        echo "</table>";
-        echo "<a href='index-cliente.php'>Volver</a>";
-        
-        $mysqli->close();
+    $mysqli->close();
     }
     ?>
 </body>
+<script src="bootstrap.bundle.min.js"></script>
 </html>
