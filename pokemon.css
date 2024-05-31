@@ -67,18 +67,6 @@ h1{
     overflow: hidden; /* Oculta la imagen cuando se mueve fuera del contenedor */
 }
 
-.imagen-movimiento {
-    position: absolute;
-    width: 100%; /* Ajusta el ancho de la imagen */
-    height: 100%; /* Ajusta la altura de la imagen */
-    animation: moverAdelanteAtras 3s infinite;
-    animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
-    transform: translateX(0);
-}
-
-.imagen-movimiento:nth-child(odd) {
-    animation-direction: alternate;
-}
 
 #tabla {
     width: 95%;
@@ -154,4 +142,84 @@ h1{
     align-items: center;
     padding: 20px;
     width: 100%;
+}
+
+.titulo {
+    text-align: center;
+}
+
+.animacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-image: url('imagenes/batalla.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+.pokemon img {
+    max-height: 400px; /* Ajusta la altura máxima según sea necesario */
+    margin-left: 10px;
+}
+.vs {
+    max-height: 100px; /* Ajusta la altura del 'vs' según sea necesario */
+    margin-right: 20px;
+}
+
+.pokemon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px; /* Espacio entre las columnas de los Pokémon */
+}
+
+.pokemon-carta {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    width: 150px;
+    text-align: center;
+}
+.pokemon-carta p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.mensaje {
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    display: none;
+    justify-content: center;
+}
+
+.boton {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.vuelta{
+    transform: scaleX(-1);
+    margin-right: 30px;
+}
+
+.pelea {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1); /* Comienza con escala normal */
+    max-height: 200px;
+    animation: pulse 5s forwards; /* Duración de 5 segundos */
+}
+
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.1); } /* Escala al 50% */
+    100% { transform: translate(-50%, -50%) scale(1); } /* Vuelve a la escala normal */
 }

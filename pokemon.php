@@ -1,8 +1,8 @@
 <?php
     require 'conexion.php';
 
-    $sql1 = "SELECT * FROM pokémon ORDER BY Ganadas DESC";
-    $resultado1 = $mysqli->query($sql1);
+    $sql = "SELECT * FROM pokémon ORDER BY Ganadas DESC";
+    $resultado = $mysqli->query($sql);
     $fila = $resultado->fetch_assoc();
     $nombre = $fila["Nombre"];
 ?>
