@@ -16,7 +16,7 @@
 
 	$id = $_GET['id'];
 	//Se prepara y ejecuta la sentencia
-    $sql = "SELECT * FROM participantes WHERE id_participante=$id";
+    $sql = "SELECT * FROM participantes WHERE id_participante = '$id'";
 	$resultado = $mysqli->query($sql);
 
 	//Se extrae el registro. No se hace en bucle porque el resultado deber ser único

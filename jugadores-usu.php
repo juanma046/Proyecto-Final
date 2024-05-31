@@ -33,35 +33,43 @@
 
             if($fila['Ganadas']==0){
                 $media=0;
-                echo "<h1>$fila[Nombre]</h1>";
+                $nombre = $fila['Nombre'];
     ?>
-        <div class="card"><!-- Creamos la card utilizando la clase card -->
+        <div class="carta">
+    <div class="card"><!-- Creamos la card utilizando la clase card -->
                     <img src="pokemon gif/<?php echo $modelo; ?>" /> <!-- Agregamos la imagen superior usando img-top -->
             <div class="card-body"> <!-- Rellenamos la card con la clase body -->
-                    <h1 class="card-title"><?php echo "<h1>$nombre_pokemon<h1>"; ?></h1> <!-- Le ponemos un título -->
-                                <!-- Completamos el resto con un texto -->
-                    <p class="card-text">Partidas Jugadas<?php echo $fila['Jugadas']; echo "<br>";echo "Partidas Ganadas $fila[Ganadas]"; echo "<br>"; echo "Prcentaje de Victoria $media" ?></p>
-                                <!-- Agregamos un botón con la clase btn-outline-secondary para que sea transparente y tenga un determinado color de borde -->
+                    <h1 class="card-title"><?php echo $nombre; ?></h1>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><p>Partidas Jugadas: <?php echo $fila['Jugadas'];?></p></li>
+                <li class="list-group-item"><p>Partidas Ganadas: <?php echo $fila['Ganadas'];?></p></li>
+                <li class="list-group-item"><p>Media de Victorias: <?php echo $media?> %</p></li>
+            </ul>
             </div>
         </div>
     <?php     
-            }else{
-                $media = ($fila['Ganadas'] / $fila['Jugadas']) * 100;
-                echo "<h1>$fila[Nombre]</h1>";
+        }else{
+            $media = ($fila['Ganadas'] / $fila['Jugadas']) * 100;
+            $nombre = $fila['Nombre'];
     ?>
-        <div class="card"><!-- Creamos la card utilizando la clase card -->
+    <div class="carta">
+    <div class="card"><!-- Creamos la card utilizando la clase card -->
                     <img src="pokemon gif/<?php echo $modelo; ?>" /> <!-- Agregamos la imagen superior usando img-top -->
             <div class="card-body"> <!-- Rellenamos la card con la clase body -->
-                    <h1 class="card-title"><?php echo "<h1>$nombre_pokemon<h1>"; ?></h1> <!-- Le ponemos un título -->
-                                <!-- Completamos el resto con un texto -->
-                    <p class="card-text">Partidas Jugadas<?php echo $fila['Jugadas']; echo "<br>";echo "Partidas Ganadas $fila[Ganadas]"; echo "<br>"; echo "Prcentaje de Victoria $media" ?></p>
-                                <!-- Agregamos un botón con la clase btn-outline-secondary para que sea transparente y tenga un determinado color de borde -->
+                    <h1 class="card-title"><?php echo $nombre; ?></h1>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><p>Partidas Jugadas: <?php echo $fila['Jugadas'];?> </p></li>
+                <li class="list-group-item"><p>Partidas Ganadas: <?php echo $fila['Ganadas'];?></p></li>
+                <li class="list-group-item"><p>Media de Victorias: <?php echo $media?> %</p></li>
+            </ul>
             </div>
         </div>
+    </div>
+    </div>
     <?php     
 }
     
-    echo "<a href='index-cliente.php'>Volver</a>";
+    echo "<p><a href='index-USU.php'>Volver</a></p>";
         
     $mysqli->close();
     }

@@ -10,6 +10,8 @@
 <body>
     <center>
         <form action="loguear.php" method="POST">
+            <img src="imagenes/escudo.svg" width="200px" class>
+            <br>
             <input type="text" name="usuario" placeholder="Ingresa tu usuario" required>
             <br><br>
             <input type="password" name="clave" placeholder="Introduce tu clave" required>

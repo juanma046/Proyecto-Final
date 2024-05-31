@@ -41,10 +41,14 @@
             <div class="card-body"> <!-- Rellenamos la card con la clase body -->
                     <h1 class="card-title"><?php echo $nombre; ?></h1>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><p>Partidas Jugadas<?php echo $fila['Jugadas'];?></p></li>
-                <li class="list-group-item"><p>Partidas Jugadas<?php echo $fila['Ganadas'];?></p></li>
-                <li class="list-group-item"><p>Partidas Jugadas<?php echo $media?></p></li>
+                <li class="list-group-item"><p>Partidas Jugadas: <?php echo $fila['Jugadas'];?></p></li>
+                <li class="list-group-item"><p>Partidas Ganadas: <?php echo $fila['Ganadas'];?></p></li>
+                <li class="list-group-item"><p>Media de Victorias: <?php echo $media?> %</p></li>
             </ul>
+            <?php
+            echo "<button class='btn btn-warning'><a href='modificar.php?id=$id class='text-white'>Cambiar Pokémon</a></button>";
+            echo "<a class='btn btn-danger' href='eliminar.php?id=$fila[id_participante]'>Eliminar</a>";
+            ?>
             </div>
         </div>
     <?php     
@@ -58,19 +62,20 @@
             <div class="card-body"> <!-- Rellenamos la card con la clase body -->
                     <h1 class="card-title"><?php echo $nombre; ?></h1>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><p>Partidas Jugadas<?php echo $fila['Jugadas'];?></p></li>
-                <li class="list-group-item"><p>Partidas Jugadas<?php echo $fila['Ganadas'];?></p></li>
-                <li class="list-group-item"><p>Partidas Jugadas<?php echo $media?></p></li>
+                <li class="list-group-item"><p>Partidas Jugadas: <?php echo $fila['Jugadas'];?> </p></li>
+                <li class="list-group-item"><p>Partidas Ganadas: <?php echo $fila['Ganadas'];?></p></li>
+                <li class="list-group-item"><p>Media de Victorias: <?php echo $media?> %</p></li>
             </ul>
-            <button>Hol</button>
+    <?php
+            echo "<button class='btn btn-warning'><a href='modificar.php?id=$id class='text-white'>Cambiar Pokémon</a></button>";
+            echo "<a class='btn btn-danger' href='eliminar.php?id=$fila[id_participante]'>Eliminar</a>";
+    ?>
             </div>
         </div>
     </div>
     </div>
     <?php     
 }
-    
-    echo "<a href='index.php'>Volver</a>";
         
     $mysqli->close();
     }
