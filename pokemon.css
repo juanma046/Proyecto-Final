@@ -122,7 +122,6 @@ h1{
 }
 
 
-
 .pie {
     background-color: #333;
     color: #fff;
@@ -137,4 +136,22 @@ h1{
 .pie .social img {
     width: 24px;
     height: 24px;
+}
+
+.combate {
+    width: 50%;
+}
+
+.combate .boton {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
 }

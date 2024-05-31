@@ -29,12 +29,15 @@ function actualizarSelect(valor, idSelect) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pokemon.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>Document</title>
 </head>
 <body>
+    <div class="contenedor">
     <H1>Torneo Pokémon La Campiña</H1>
     <h2>Selecciona a los 2 participantes que se van a enfrentar</h2>
-    <form action="enfrentamiento2.php" method="POST">
+    <form action="enfrentamiento2.php" method="POST" class="combate">
+        <div class="select">
         <select id="select1" name="participante1" onchange="actualizarSelect(this.value, 'select2')">
         <?php
         while($fila1 = $resultado1->fetch_assoc()){
@@ -50,7 +53,11 @@ function actualizarSelect(valor, idSelect) {
         }
         ?>
         </select>
-        <p><input type="submit" value="Comenzar la batlla"></p>
+        </div>
+        <br>
+        <br>
+        <p class="boton"><button type="submit" class="btn btn-primary" name="submit">Comenzar la batalla</button></p>
         </form>
+    </div>
 </body>
 </html>
