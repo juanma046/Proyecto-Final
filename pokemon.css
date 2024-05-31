@@ -9,12 +9,17 @@ body{
 	background-repeat: no-repeat;
 	background-attachment: fixed;
     font-family: "Bitstream Vera Serif Bold", serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
+}
+
+button a {
+    outline: none;
+    text-decoration: none;
+    padding: 2px 1px 0;
+    color: white;
+}
+
+button a:hover {
+    color: grey;
 }
 
 .contenedor{
@@ -35,6 +40,7 @@ main {
 
 main h2{
     padding:20px;
+    text-align: center;
 }
 
 footer{
@@ -73,4 +79,23 @@ h1{
 
 .imagen-movimiento:nth-child(odd) {
     animation-direction: alternate;
+}
+
+#tabla {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#tabla tr {
+    width: 100%;
+}
+
+#tabla button {
+    width: 100%;
+    margin: 20px;
+}
+
+.clasf {
+    width: 100%;
 }

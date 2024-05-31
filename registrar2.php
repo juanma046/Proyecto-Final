@@ -11,12 +11,13 @@
 
     //Obtengo los datos introducidos en el formulario anterior
     $nombre = $_POST['nombre'];
+    $clave = $_POST['clave'];
     $ID_pokemon = $_POST['pokemon'];
     $jugadas = 0;
     $ganadas = 0;
 
     //Se prepara la sentencia SQL
-    $sql1 = "INSERT INTO participantes (Nombre, individuo_pokemon, Jugadas, Ganadas) VALUES ('$nombre','$ID_pokemon','$jugadas','$ganadas')";
+    $sql1 = "INSERT INTO participantes (Nombre,Contraseña, individuo_pokemon, Jugadas, Ganadas) VALUES ('$nombre','$clave','$ID_pokemon','$jugadas','$ganadas')";
 
     //Se ejecuta la sentencia y se guarda el resultado en $resulado1
     $resultado = $mysqli->query($sql1);

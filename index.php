@@ -6,9 +6,15 @@
     if(!isset($usuario)){
         header("location:login.php");
     }else{
-    $sql1 = "SELECT * FROM participantes ORDER BY Ganadas DESC";
+    
+    $sql = "SELECT * FROM participantes WHERE Nombre LIKE '$usuario'";
+    $resultado = $mysqli->query($sql);
+    $fila = $resultado->fetch_assoc();
+    $id = $fila['id_participante'];
+    
+    $sql1 = "SELECT * FROM participantes WHERE id_participante <> $id ORDER BY Ganadas DESC";
     $resultado1 = $mysqli->query($sql1);
-    $fila = $resultado1->fetch_assoc();
+    $fila1 = $resultado1->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
@@ -67,25 +73,11 @@
     <?php
         echo "<h2>Participantes</h2>";
 
-        echo "<div>";
+        echo "<div class='clasf'>";
         echo "<table id='tabla'>";
-        echo "<tr>";
-            echo "<th>Nombre</th>";
-            //echo "<th>Pokémon</th>";
-            //echo "<th>Jugadas</th>";
-            //echo "<th>Ganadas</th>";
-            echo "<th>Puesto</th>";
-        echo "</tr>";
-        
         while($fila1 = $resultado1->fetch_assoc()){
             echo "<tr>";
-                //echo "<td>$fila1[Nombre]</td>";
-                //echo "<td>$nombre_pokemon</td>";
-                //echo "<td>$fila1[Jugadas]</td>";
-                //echo "<td>$fila1[Ganadas]</td>";
                 echo "<td><button class='btn btn-warning'><a href='jugadores.php?id=$fila1[id_participante]' class='text-white'>$fila1[Nombre]</a></button></td>";
-                //echo "<td><button class='btn btn-warning'><a href='modificar.php?id=$fila1[id_participante]' class='text-white'>Cambiar pokémon</a></button></td>";
-                //echo "<td><button class='btn btn-danger'><a href='eliminar.php?id=$fila1[id_participante]' class='text-white'>Eliminar</a></button></td>";
             echo "</tr>";
         }
         echo "</table>";
@@ -95,7 +87,7 @@
         $mysqli->close();
     }
     ?>
-    <p><a href="registrar1.php">Registrar nuevo participante</a></p>
+    <p><button class='btn btn-primary'><a href="registrar1.php">Registrar nuevo participante</a></button></p>
     
     <footer>
         <h2>Hola</h2>

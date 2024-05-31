@@ -12,11 +12,13 @@ if (!isset($usuario)) {
 $sql = "SELECT * FROM participantes WHERE Nombre = '$usuario'";
 $resultado = $mysqli->query($sql);
 $fila = $resultado->fetch_assoc();
+$id = $fila['id_participante'];
+
 
 $id_usuario = $fila['id_participante']; // Obtener el ID del usuario activo
 
 // Obtener los participantes ordenados por ganadas
-$sql1 = "SELECT * FROM participantes ORDER BY Ganadas DESC";
+$sql1 = "SELECT * FROM participantes WHERE id_participante <> $id AND rol NOT LIKE 'admin' ORDER BY Ganadas DESC";
 $resultado1 = $mysqli->query($sql1);
 ?>
 
@@ -65,8 +67,6 @@ $resultado1 = $mysqli->query($sql1);
         <div>
             <table id='tabla'>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Puesto</th>
                 </tr>
                 <?php while ($fila1 = $resultado1->fetch_assoc()): ?>
                     <tr>
