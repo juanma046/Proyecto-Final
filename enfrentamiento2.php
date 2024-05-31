@@ -109,7 +109,7 @@
     <img src="pokemon gif/<?php echo $filaPK1['Modelo']; ?>" />
 <?php
 //Repetimos todo lo anterior para el segundo pokemon
-    echo "<h2>VS</h2>";
+    echo "<img src='imagenes/vs.png'";
     echo "<p>$fila2[Nombre]: $poke2 ($tipos2)</p>";
 ?>
     <img src="pokemon gif/<?php echo $filaPK2['Modelo']; ?>" />

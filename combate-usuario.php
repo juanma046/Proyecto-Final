@@ -73,6 +73,9 @@ if ($resultado2->num_rows > 0) {
             <input type="hidden" name="id_participante1" value="<?php echo $id; ?>">
         </div>
         <div>
+            <img src="imagenes/vs.png">
+        </div>
+        <div>
             <h3>Participante 2: <?php echo $fila2['Nombre']; ?></h3>
             <img src="pokemon gif/<?php echo $filaPK2['Modelo']; ?>" alt="<?php echo $poke2; ?>">
             <p>Pokémon: <?php echo $poke2; ?> (<?php echo $tipos2; ?>)</p>
