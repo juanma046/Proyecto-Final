@@ -20,7 +20,6 @@
                      <!--  navbar permite anclar la barra de navegación a la parte superior o inferior de la pantalla y que siempre sea visible -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0"><!--me-auto es para centrar horizontalmente contenido de nivel de bloque de ancho fijo, es decir, contenido que tiene display: block y un conjunto width , configurando los márgenes horizontales en auto -->
                         <li class="nav-item"><a href="pokemon.php" class="nav-link">Lista de Pokemons</a></li>
-                        <li class="nav-item"><a href="enfrentamiento1.php" class="nav-link">Simulador de Combate</a></li>
                         <li class="nav-item"><a href="salir.php" class="nav-link">Cerrar sesión</a></li>
                         <li class="nav-item dropdown">
                             <a 

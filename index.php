@@ -89,8 +89,16 @@
     ?>
     <p><button class='btn btn-primary'><a href="registrar1.php">Registrar nuevo participante</a></button></p>
     
-    <footer>
-        <h2>Hola</h2>
+    <footer class="pie">
+        <div class="nombre">Creado por Juan Manuel Sánchez Gamboa</div>
+        <div class="social">
+            <a href="https://www.instagram.com/pokemon/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/PokemonOficialES/?locale=es_LA" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+            </a>
+        </div>
     </footer>
 </div>
     
