@@ -7,7 +7,7 @@
 
     $sql = "SELECT rol FROM participantes where Nombre = '$usuario' and Contraseña = '$clave'";
     $resultado = $mysqli->query($sql);
-    //$array = mysqli_fetch_array($resultado);
+    $array = mysqli_fetch_array($resultado);
 
     if ($resultado > 0){
         $fila = $resultado->fetch_assoc();
