@@ -3,12 +3,16 @@
 	margin: 0px;
 }
 
+@font-face {
+    font-family: 'Games';
+    src: url(fuente/Games.ttf);
+}
 body{
     background-image: url("imagenes/fondo.png");
     background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-    font-family: "Bitstream Vera Serif Bold", serif;
+                                                
 }
 button a {
     outline: none;
@@ -51,15 +55,6 @@ main {
 main h2{
     padding:20px;
     text-align: center;
-}
-
-footer{
-    color:white;
-    width:100%;
-    background: #353534;
-    padding:20px;
-    margin-top: 20px;
-    margin-bottom:20px;
 }
 
 h1{
@@ -133,18 +128,40 @@ h1{
 
 .pie {
     background-color: #333;
-    color: #fff;
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 20px;
+    width:100%;
+    margin-top: 20px;
+    margin-bottom:20px;
 }
-.pie .nombre {
+.pie .juegos {
     font-size: 18px;
+    display: flex;
+    justify-content: center;
 }
-.pie .social img {
+
+.pie-img img {
+    width: 250px;
+    height: 100px;
+}
+
+.social img {
     width: 24px;
     height: 24px;
+}
+
+.pie ul {
+    list-style: none;
+    text-align: center;
+}
+
+.pie li {
+    display: block;
+    margin: 5px;
+
 }
 
 .combate {
