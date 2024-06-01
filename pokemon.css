@@ -73,6 +73,8 @@ h1{
     overflow: hidden;
 }
 
+/* Lista de Participantes */
+
 .scroll {
     margin: 5px;
     padding: 5px;
@@ -94,6 +96,8 @@ h1{
     width: 100%;
     margin: 20px;
 }
+
+/* Css de la carta del usuario */
 
 .card {
     display: flex;
@@ -125,6 +129,7 @@ h1{
     color:black
 }
 
+/* Css del Pie de Página */
 
 .pie {
     background-color: #333;
@@ -164,6 +169,7 @@ h1{
 
 }
 
+/* Css de Enfrentamiento1 */
 .combate {
     width: 50%;
 }
@@ -181,6 +187,8 @@ h1{
     padding: 20px;
     width: 100%;
 }
+
+/* Css de Enfrentamiento2, Combate-usuario y Combate-usuario2 */
 
 .titulo {
     text-align: center;

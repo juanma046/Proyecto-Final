@@ -32,7 +32,7 @@ if ($resultado1->num_rows > 0) {
 }
 
 // Obtengo un usuario aleatorio para el combate
-$sql2 = "SELECT * FROM participantes ORDER BY RAND() LIMIT 1";
+$sql2 = "SELECT * FROM participantes WHERE rol NOT LIKE 'admin' AND id_participante NOT LIKE '$id' ORDER BY RAND() LIMIT 1";
 $resultado2 = $mysqli->query($sql2);
 
 if ($resultado2->num_rows > 0) {
@@ -60,28 +60,32 @@ if ($resultado2->num_rows > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pokemon.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
     <title>Combate Pokémon</title>
 </head>
 <body>
-    <h1>Torneo Pokémon La Campiña</h1>
-    <h2>Selecciona a los 2 participantes que se van a enfrentar</h2>
+    <div class="contenedor">
+    <h1 class="titulo">Torneo Pokémon La Campiña</h1>
+    <div class="batalla-container">
+    <div class="pokemon">
+            <img src="pokemon gif/<?php echo $filaPK1['Modelo']; ?>" class="vuelta">
+        <div class="pokemon-carta">
+       <p><?php echo "$fila1[Nombre]: ";  echo $poke1; ?> (<?php echo $tipos1; ?>)</p>
+        </div>
+        </div>
+        <img src="imagenes/vs.png" class="vs">
+    <div class="pokemon">
+            <img src="pokemon gif/<?php echo $filaPK2['Modelo']; ?>">
+            <div class="pokemon-carta">
+            <p><?php echo "$fila2[Nombre]: "  ;  echo $poke2; ?> (<?php echo $tipos2; ?>)</p>
+            </div>
+        </div>
+        </div>
     <form action="combate-usuario2.php" method="POST">
-        <div>
-            <h3>Participante 1: <?php echo $fila1['Nombre']; ?></h3>
-            <img src="pokemon gif/<?php echo $filaPK1['Modelo']; ?>" alt="<?php echo $poke1; ?>">
-            <p>Pokémon: <?php echo $poke1; ?> (<?php echo $tipos1; ?>)</p>
-            <input type="hidden" name="id_participante1" value="<?php echo $id; ?>">
-        </div>
-        <div>
-            <img src="imagenes/vs.png">
-        </div>
-        <div>
-            <h3>Participante 2: <?php echo $fila2['Nombre']; ?></h3>
-            <img src="pokemon gif/<?php echo $filaPK2['Modelo']; ?>" alt="<?php echo $poke2; ?>">
-            <p>Pokémon: <?php echo $poke2; ?> (<?php echo $tipos2; ?>)</p>
-            <input type="hidden" name="id_participante2" value="<?php echo $fila2['id_participante']; ?>">
-        </div>
-        <p><input type="submit" value="Comenzar la batalla"></p>
+        <input type="hidden" name="id_participante1" value="<?php echo $fila1['id_participante']; ?>">
+        <input type="hidden" name="id_participante2" value="<?php echo $fila2['id_participante']; ?>">
+        <p class="boton"><button class="btn btn-primary"><input type="submit" class="submit"></button></p>
     </form>
+    </div>
 </body>
 </html>

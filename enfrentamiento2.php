@@ -110,7 +110,7 @@ $tipos2 = $filaPK2['Tipo'];
             echo "<p>$fila1[Nombre]: $poke1 ($tipos1)</p>";
         ?>
     </div>
-</div>
+    </div>
 <img src='imagenes/vs.png' class='vs'>
 <div class="pokemon">
 <img src="pokemon gif/<?php echo $filaPK2['Modelo']; ?>" />
@@ -208,8 +208,6 @@ Fgana1($id1,$id2,$fecha,$ganador1,$mysqli);
 }
 ?>
 </div>
-
-
 <p class="boton"><button type="submit" class="btn btn-primary" name="submit"><a href="index.php">Volver</a></button><p>
 </div>
     </div>
@@ -217,3 +215,4 @@ Fgana1($id1,$id2,$fecha,$ganador1,$mysqli);
     
 </body>
 </html>
+
