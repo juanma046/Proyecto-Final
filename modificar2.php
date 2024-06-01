@@ -18,12 +18,6 @@
 			//Obtengo los datos introducidos en el formulario anterior
 			$id = $_POST["id"];
 			$ID_pokemon = $_POST["pokemon"];
-
-            //$sqlpoke = "SELECT Nombre FROM pokémon WHERE id_pokemon LIKE '$ID_pokemon'";
-            //$resultadoP = $mysqli->query($sqlpoke);
-
-            //$fila = $resultadoP->fetch_assoc();
-            //$nombre_pokemon = $fila['Nombre'];
 	
 			//Se repara la sentencia SQL
 			$sql = "UPDATE participantes SET individuo_pokemon='$ID_pokemon' WHERE id_participante=$id";
