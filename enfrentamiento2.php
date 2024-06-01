@@ -102,7 +102,7 @@ $tipos2 = $filaPK2['Tipo'];
 
 <h1 class="titulo">Que comience el combate</h1>
 
-<div class="animacion">
+<div class="batalla-container">
     <div class="pokemon">
     <img src="pokemon gif/<?php echo $filaPK1['Modelo']; ?>" class="vuelta" />
     <div class="pokemon-carta">
@@ -118,7 +118,6 @@ $tipos2 = $filaPK2['Tipo'];
     <?php 
         echo "<p>$fila2[Nombre]: $poke2 ($tipos2)</p>";
     ?>
-    <img src="imagenes/pelea.png" class="pelea">
 </div>
 </div>
 <?php
