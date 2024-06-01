@@ -65,6 +65,10 @@
         </header>
     <main>
 
+    <div class="portada">
+       <img src="imagenes/pokemon.png">
+    </div>
+
     <div class="video">
         <video width="1000" height="500" autoplay loop muted>
             <source src=video/pokemon.mp4 type="video/mp4">
@@ -73,7 +77,7 @@
     <?php
         echo "<h2>Participantes</h2>";
 
-        echo "<div class='clasf'>";
+        echo "<div class='scroll'>";
         echo "<table id='tabla'>";
         while($fila1 = $resultado1->fetch_assoc()){
             echo "<tr>";
