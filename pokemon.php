@@ -3,8 +3,6 @@
 
     $sql = "SELECT * FROM pokémon ORDER BY Ganadas DESC";
     $resultado = $mysqli->query($sql);
-    $fila = $resultado->fetch_assoc();
-    $nombre = $fila["Nombre"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,131 +10,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pokemon.css">
-    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
     <title>Document</title>
+    <script>
+        $(document).ready(function() {
+            $('#tabla').DataTable();
+        });
+    </script>
 </head>
 <body>
-    <main>
-    <div class="container">
-    <h1>Lista de los Pokémons</h1>
-                <div class="row">
-                    <div class="col">
-                        <div class="carousel slide" id="mi-carousel" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                <div class="card" style="width: 18 rem">
-                                            <img class="card-img-top" src="imagenes/fuerza.jpg"> <!-- Agregamos una imagen superior usando img-top -->
-                                        <div class="card-body"> <!-- Rellenamos la card con la clase body -->
-                                            <h4 class="card-title">Fuerza</h4> <!-- Le ponemos un título -->
-                                <!-- Completamos el resto con un texto -->
-                                            <p class="card-text">Las builds de fuerza son para los jugadores que sean amantes del daño masivo y que les guste llevar armaduras pesadas para aguantar todo tipo de daños. Por lo general solo se necesita subir las stats de fuerza y aguante.</p>
-                                <!-- Agregamos un botón con la clase btn-outline-secondary para que sea transparente y tenga un determinado color de borde -->
-                                        <button type="button" class="btn btn-outline-secondary"><a href="https://www.youtube.com/watch?v=9V1OY9d6La8&ab_channel=Crozyn">Gameplay</a></button>
-                                        </div>
-                                        </div>
-                                </div>
-                                <div class="carousel-item" data-bs-interval="5000">
-                                        <div class="card" style="width: 18 rem">
-                                            <img class="card-img-top" src="imagenes/fuerza.jpg"> <!-- Agregamos una imagen superior usando img-top -->
-                                        <div class="card-body"> <!-- Rellenamos la card con la clase body -->
-                                            <h4 class="card-title">Fuerza</h4> <!-- Le ponemos un título -->
-                                <!-- Completamos el resto con un texto -->
-                                            <p class="card-text">Las builds de fuerza son para los jugadores que sean amantes del daño masivo y que les guste llevar armaduras pesadas para aguantar todo tipo de daños. Por lo general solo se necesita subir las stats de fuerza y aguante.</p>
-                                <!-- Agregamos un botón con la clase btn-outline-secondary para que sea transparente y tenga un determinado color de borde -->
-                                        <button type="button" class="btn btn-outline-secondary"><a href="https://www.youtube.com/watch?v=9V1OY9d6La8&ab_channel=Crozyn">Gameplay</a></button>
-                                        </div>
-                                        </div>
-                                </div>
-                                <div class="carousel-item">
-                                <div class="card" style="width: 18 rem">
-                                            <img class="card-img-top" src="imagenes/fuerza.jpg"> <!-- Agregamos una imagen superior usando img-top -->
-                                        <div class="card-body"> <!-- Rellenamos la card con la clase body -->
-                                            <h4 class="card-title">Fuerza</h4> <!-- Le ponemos un título -->
-                                <!-- Completamos el resto con un texto -->
-                                            <p class="card-text">Las builds de fuerza son para los jugadores que sean amantes del daño masivo y que les guste llevar armaduras pesadas para aguantar todo tipo de daños. Por lo general solo se necesita subir las stats de fuerza y aguante.</p>
-                                <!-- Agregamos un botón con la clase btn-outline-secondary para que sea transparente y tenga un determinado color de borde -->
-                                        <button type="button" class="btn btn-outline-secondary"><a href="https://www.youtube.com/watch?v=9V1OY9d6La8&ab_channel=Crozyn">Gameplay</a></button>
-                                        </div>
-                                        </div>
-                                </div>
-                            </div>
-        
-                            <!-- Botones -->
-                            <button 
-                                class="carousel-control-prev"
-                                type="button"
-                                data-bs-target="#mi-carousel"
-                                data-bs-slide="prev"
+<header>  
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"><!-- Boton para el menu movil -->
+            <div class="container-fluid"> <!-- Determina el width y el height como 100% -->
+                <img src="imagenes/escudo.svg" class="escudo">
+    
+                
+    
+                
+                <div class="navbar-collapse" id="menu"><!--navbar-collapse es para agrupar el contenido de la barra de navegación pora breakpoint determinado.-->
+                     <!--  navbar permite anclar la barra de navegación a la parte superior o inferior de la pantalla y que siempre sea visible -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0"><!--me-auto es para centrar horizontalmente contenido de nivel de bloque de ancho fijo, es decir, contenido que tiene display: block y un conjunto width , configurando los márgenes horizontales en auto -->
+                        <li class="nav-item"><a href="pokemon.php" class="nav-link">Lista de Pokemons</a></li>
+                        <li class="nav-item"><a href="enfrentamiento1.php" class="nav-link">Simulador de Combate</a></li>
+                        <li class="nav-item"><a href="salir.php" class="nav-link">Cerrar sesión</a></li>
+                        <li class="nav-item dropdown">
+                            <a 
+                                href="#" 
+                                class="nav-link dropdown-toggle"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                id="dropdown-menu"
                             >
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Anterior</span>
-                            </button>
-        
-                            <button 
-                                class="carousel-control-next"
-                                type="button"
-                                data-bs-target="#mi-carousel"
-                                data-bs-slide="next"
-                            >
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Siguiente</span>
-                            </button>
-        
-                            <!-- Indicadores -->
-                            <div class="carousel-indicators">
-                                <button 
-                                    type="button"
-                                    class="active"
-                                    data-bs-target="#mi-carousel"
-                                    data-bs-slide-to="0"
-                                    
-                                ></button>
-                                <button 
-                                    type="button"
-                                    class=""
-                                    data-bs-target="#mi-carousel"
-                                    data-bs-slide-to="1"
-                                    
-                                ></button>
-                                <button 
-                                    type="button"
-                                    class=""
-                                    data-bs-target="#mi-carousel"
-                                    data-bs-slide-to="2"
-                                    
-                                ></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-                <script src="bootstrap.bundle.min.js"></script>
-    </main>
-    <?php
-//
-    //    while($fila1 = $resultado1->fetch_assoc()){
-    //        echo "<div>";
-    //            echo "Nombre: $fila1[Nombre]";
-    //            echo "Tipo: $fila1[Tipo]";
-    //            $jugadas=$fila1['Jugadas'];
-    //            $ganadas=$fila1['Ganadas'];
-    //            if($ganadas==0){
-    //                $media=0;
-    //                echo " Win-Rate: $media%";
-    //            }else{
-    //                $media = ($ganadas / $jugadas) * 100;
-    //                echo " Win-Rate: $media%";
-    //            }
-    //?>
-                <img src="pokemon gif/<?php echo $fila1['Modelo']; ?>" />
-    <?php
-    //        echo "</div>";
-    //    }
-    //    
-    //    $mysqli->close();
-    //?>
-    <a href="index.php">Volver</a>
-    </div>
+                                Items
+                            </a>
+    
+                            <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
+                                <li><a href="https://darksouls.fandom.com/es/wiki/Armas_de_Dark_Souls" class="dropdown-item"><img src="imagenes/espada.jpg" width="50px">Armas</a></li>
+                                <li><a href="https://darksouls.fandom.com/es/wiki/Escudos_de_Dark_Souls" class="dropdown-item"><img src="imagenes/escudo.jpg" width="50px">Escudos</a></li>
+                                <li><a href="https://darksouls.fandom.com/es/wiki/Armaduras_de_Dark_Souls" class="dropdown-item"><img src="imagenes/armadura.jpg" width="50px">Armaduras</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+        </header>                         
+<?php
+echo "<div class='contenedor-tabla'>";
+echo "<main>";
+echo "<table id='lista' class='display' style='width:100%'>";
+echo "<tr>";
+    echo "<th>Sprite</th>";
+    echo "<th>Nombre</th>";
+    echo "<th>Tipo</th>";
+    echo "<th>Jugadas</th>";
+    echo "<th>Ganadas</th>";
+    echo "<th>Win-Rate</th>";
+echo "</tr>";
+
+while ($fila = $resultado->fetch_assoc()) {
+    $jugadas = $fila['Jugadas'];
+    $ganadas = $fila['Ganadas'];
+    echo "<tr>";
+    echo "<td>";
+    ?>
+    <img src="pokemon sprite/<?php echo $fila['sprite']; ?>" />
+<?php
+    echo "</td>";      
+    echo "<td>$fila[Nombre]</td>";
+    echo "<td>$fila[Tipo]</td>";
+    echo "<td>$jugadas</td>";
+    echo "<td>$ganadas</td>";
+    if ($ganadas == 0) {
+        $media = 0;
+        echo "<td>$media %</td>";
+    } else {
+        $media = ($ganadas / $jugadas) * 100;
+        echo "<td>$media %</td>";
+    }
+    echo "</tr>";
+}
+echo "</table>";
+echo "</main>";
+echo "</div>";
+
+$mysqli->close();
+?>
+<p class="boton"><button type="submit" class="btn btn-primary" name="submit"><a href="index.php">Volver</a></button></p>
 </body>
 </html>
