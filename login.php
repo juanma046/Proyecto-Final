@@ -9,8 +9,9 @@
 </head>
 <body>
     <center>
-        <form action="loguear.php" method="POST">
-            <img src="imagenes/escudo.svg" width="200px" class>
+        <div class="contenedor">
+        <form action="loguear.php" method="POST" class="login">
+            <img src="imagenes/escudo.svg" width="200px" class="escudo">
             <br>
             <input type="text" name="usuario" placeholder="Ingresa tu usuario" required>
             <br><br>
@@ -23,6 +24,7 @@
             echo "<div style='color: red;'>" . $_GET['error'] . "</div>";
         }
         ?>
+        </div>
     </center>
 </body>
 </html>
