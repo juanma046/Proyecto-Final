@@ -39,13 +39,13 @@ $id = $_GET['id'];
 							<!-- Nmbre de usuario  -->
 							<label for="formControlInput" class="form-label">Introduce el nuevo nombre del usuario</label>
 							<input type="hidden" name="id" value="<?php echo $fila['id_participante']; ?>">
-							<input type="text" class="form-control" id="formControlInput" name="nombre">
+							<input type="text" class="form-control" id="formControlInput" name="nombre" required>
 						</div>
 
                         <div class="form-group">
 							<!-- Contraseña  -->
 							<label for="formControlInput" class="form-label">Introduce la nueva contraseña para el usuario</label>
-							<input type="text" class="form-control" id="formControlInput" name="clave">
+							<input type="text" class="form-control" id="formControlInput" name="clave" required>
 						</div>
 						
 						<div class="form-group">
