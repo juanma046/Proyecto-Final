@@ -51,6 +51,9 @@ $resultado1 = $mysqli->query($sql1);
         </nav>
     </header>
     <main>
+    <div class="portada">
+       <img src="imagenes/pokemon.png">
+    </div>
         <div class="video">
             <video width="1000" height="500" autoplay loop muted>
                 <source src="video/pokemon.mp4" type="video/mp4">
