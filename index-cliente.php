@@ -44,6 +44,9 @@ $resultado1 = $mysqli->query($sql1);
                         <li class="nav-item">
                             <a href='combate-usuario.php?id=<?php echo $id_usuario; ?>' class='text-white nav-link'>Simulador de Combate</a>
                         </li>
+                        <li class="nav-item">
+                            <a href='datos.php?id=<?php echo $id_usuario; ?>' class='text-white nav-link'>Tus datos</a>
+                        </li>
                         <li class="nav-item"><a href="salir.php" class="nav-link">Cerrar Sesión</a></li>
                     </ul>
                 </div>
