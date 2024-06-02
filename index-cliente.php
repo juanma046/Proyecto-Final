@@ -39,7 +39,7 @@ $resultado1 = $mysqli->query($sql1);
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a href="pokemon.php" class="nav-link">Lista de Pokemons</a></li>
                         <li class="nav-item">
-                            <a href='registro-jugador.php?id=<?php echo $id_usuario; ?>' class='text-white nav-link'>Registro de Combates</a>
+                            <a href='registro-jugador.php?id=<?php echo $id; ?>' class='text-white nav-link'>Registro de Combates</a>
                         </li>
                         <li class="nav-item">
                             <a href='combate-usuario.php?id=<?php echo $id_usuario; ?>' class='text-white nav-link'>Simulador de Combate</a>
@@ -66,7 +66,7 @@ $resultado1 = $mysqli->query($sql1);
         echo "<table id='tabla'>";
         while($fila1 = $resultado1->fetch_assoc()){
             echo "<tr>";
-                echo "<td><button class='btn btn-warning'><a href='jugadores.php?id=$fila1[id_participante]' class='text-white'>$fila1[Nombre]</a></button></td>";
+                echo "<td><button class='btn btn-warning'><a href='jugadores-usu.php?id=$fila1[id_participante]' class='text-white'>$fila1[Nombre]</a></button></td>";
             echo "</tr>";
         }
         echo "</table>";

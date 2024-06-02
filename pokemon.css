@@ -256,21 +256,12 @@ h1{
 }
 
 .contenedor-tabla {
-    max-width:1000px;
-	width:100%;
-	margin:auto;
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.contenedor-tabla main{
-    margin-top: 200px;
-	color: #fff;
-    background:#353534;
-	padding: 20px;
-	width:90%;
-    margin-bottom: 20px;
 }
 
 #lista {
@@ -279,13 +270,13 @@ h1{
     border-collapse: collapse;
 }
 
- #lista th, td {
+#lista th, #lista td {
     padding: 15px;
     text-align: left;
     border: solid;
 }
 
- #list img {
+#lista img {
     max-width: 50px;
     height: auto;
 }

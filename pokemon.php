@@ -1,8 +1,22 @@
 <?php
-    require 'conexion.php';
+   require 'conexion.php';
+   session_start();
+   $usuario = $_SESSION['username'];
+   echo "$usuario";
 
-    $sql = "SELECT * FROM pokémon ORDER BY Ganadas DESC";
-    $resultado = $mysqli->query($sql);
+   if(!isset($usuario)){
+       header("location:login.php");
+   }else{
+   
+   $sql = "SELECT * FROM participantes WHERE Nombre LIKE '$usuario'";
+   $resultado = $mysqli->query($sql);
+   $fila = $resultado->fetch_assoc();
+   $id = $fila['id_participante'];
+   $rol = $fila['Rol'];
+
+   $sql2 = "SELECT * FROM pokémon";
+   $resultado2 = $mysqli->query($sql2);
+   $fila2 = $resultado2->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,38 +37,23 @@
     </script>
 </head>
 <body>
-<header>  
+<?php
+   if ($rol == 'usu'){
+    ?>
+    <header>  
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"><!-- Boton para el menu movil -->
             <div class="container-fluid"> <!-- Determina el width y el height como 100% -->
                 <img src="imagenes/escudo.svg" class="escudo">
-    
-                
-    
-                
-                <div class="navbar-collapse" id="menu"><!--navbar-collapse es para agrupar el contenido de la barra de navegación pora breakpoint determinado.-->
+            <div class="navbar-collapse" id="menu"><!--navbar-collapse es para agrupar el contenido de la barra de navegación pora breakpoint determinado.-->
                      <!--  navbar permite anclar la barra de navegación a la parte superior o inferior de la pantalla y que siempre sea visible -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0"><!--me-auto es para centrar horizontalmente contenido de nivel de bloque de ancho fijo, es decir, contenido que tiene display: block y un conjunto width , configurando los márgenes horizontales en auto -->
-                        <li class="nav-item"><a href="pokemon.php" class="nav-link">Lista de Pokemons</a></li>
-                        <li class="nav-item"><a href="enfrentamiento1.php" class="nav-link">Simulador de Combate</a></li>
-                        <li class="nav-item"><a href="salir.php" class="nav-link">Cerrar sesión</a></li>
-                        <li class="nav-item dropdown">
-                            <a 
-                                href="#" 
-                                class="nav-link dropdown-toggle"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                                id="dropdown-menu"
-                            >
-                                Items
-                            </a>
-    
-                            <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
-                                <li><a href="https://darksouls.fandom.com/es/wiki/Armas_de_Dark_Souls" class="dropdown-item"><img src="imagenes/espada.jpg" width="50px">Armas</a></li>
-                                <li><a href="https://darksouls.fandom.com/es/wiki/Escudos_de_Dark_Souls" class="dropdown-item"><img src="imagenes/escudo.jpg" width="50px">Escudos</a></li>
-                                <li><a href="https://darksouls.fandom.com/es/wiki/Armaduras_de_Dark_Souls" class="dropdown-item"><img src="imagenes/armadura.jpg" width="50px">Armaduras</a></li>
-                            </ul>
+                    <li class="nav-item">
+                            <a href='registro-jugador.php?id=<?php echo $id; ?>' class='text-white nav-link'>Registro de Combates</a>
                         </li>
+                        <li class="nav-item">
+                            <a href='combate-usuario.php?id=<?php echo $id; ?>' class='text-white nav-link'>Simulador de Combate</a>
+                        </li>
+                        <li class="nav-item"><a href="salir.php" class="nav-link">Cerrar sesión</a></li>
                     </ul>
                 </nav>
         </header>                         
@@ -71,17 +70,76 @@ echo "<tr>";
     echo "<th>Win-Rate</th>";
 echo "</tr>";
 
-while ($fila = $resultado->fetch_assoc()) {
-    $jugadas = $fila['Jugadas'];
-    $ganadas = $fila['Ganadas'];
+while ($fila2 = $resultado2->fetch_assoc()) {
+    $jugadas = $fila2['Jugadas'];
+    $ganadas = $fila2['Ganadas'];
     echo "<tr>";
     echo "<td>";
     ?>
-    <img src="pokemon sprite/<?php echo $fila['sprite']; ?>" />
+    <img src="pokemon sprite/<?php echo $fila2['sprite']; ?>" />
 <?php
     echo "</td>";      
-    echo "<td>$fila[Nombre]</td>";
-    echo "<td>$fila[Tipo]</td>";
+    echo "<td>$fila2[Nombre]</td>";
+    echo "<td>$fila2[Tipo]</td>";
+    echo "<td>$jugadas</td>";
+    echo "<td>$ganadas</td>";
+    if ($ganadas == 0) {
+        $media = 0;
+        echo "<td>$media %</td>";
+    } else {
+        $media = ($ganadas / $jugadas) * 100;
+        echo "<td>$media %</td>";
+    }
+    echo "</tr>";
+}
+echo "</table>";
+echo "</main>";
+echo "</div>";
+
+$mysqli->close();
+?>
+<p class="boton"><button type="submit" class="btn btn-primary" name="submit"><a href="index-cliente.php">Volver</a></button></p>
+
+    <?php
+   }else{
+    ?>
+    <header>  
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"><!-- Boton para el menu movil -->
+            <div class="container-fluid"> <!-- Determina el width y el height como 100% -->
+                <img src="imagenes/escudo.svg" class="escudo">
+                <div class="navbar-collapse" id="menu"><!--navbar-collapse es para agrupar el contenido de la barra de navegación pora breakpoint determinado.-->
+                     <!--  navbar permite anclar la barra de navegación a la parte superior o inferior de la pantalla y que siempre sea visible -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0"><!--me-auto es para centrar horizontalmente contenido de nivel de bloque de ancho fijo, es decir, contenido que tiene display: block y un conjunto width , configurando los márgenes horizontales en auto -->
+                        <li class="nav-item"><a href="pokemon.php" class="nav-link">Registro de Combates</a></li>
+                        <li class="nav-item"><a href="enfrentamiento1.php" class="nav-link">Simulador de Combate</a></li>
+                        <li class="nav-item"><a href="salir.php" class="nav-link">Cerrar sesión</a></li>
+                    </ul>
+                </nav>
+        </header>                         
+<?php
+echo "<div class='contenedor-tabla'>";
+echo "<main>";
+echo "<table id='lista' class='display' style='width:100%'>";
+echo "<tr>";
+    echo "<th>Sprite</th>";
+    echo "<th>Nombre</th>";
+    echo "<th>Tipo</th>";
+    echo "<th>Jugadas</th>";
+    echo "<th>Ganadas</th>";
+    echo "<th>Win-Rate</th>";
+echo "</tr>";
+
+while ($fila2 = $resultado2->fetch_assoc()) {
+    $jugadas = $fila2['Jugadas'];
+    $ganadas = $fila2['Ganadas'];
+    echo "<tr>";
+    echo "<td>";
+    ?>
+    <img src="pokemon sprite/<?php echo $fila2['sprite']; ?>" />
+<?php
+    echo "</td>";      
+    echo "<td>$fila2[Nombre]</td>";
+    echo "<td>$fila2[Tipo]</td>";
     echo "<td>$jugadas</td>";
     echo "<td>$ganadas</td>";
     if ($ganadas == 0) {
@@ -100,5 +158,9 @@ echo "</div>";
 $mysqli->close();
 ?>
 <p class="boton"><button type="submit" class="btn btn-primary" name="submit"><a href="index.php">Volver</a></button></p>
+    <?php
+   }
+}
+    ?>
 </body>
 </html>
