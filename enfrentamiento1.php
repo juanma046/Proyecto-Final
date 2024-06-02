@@ -1,11 +1,11 @@
 <?php 
 require 'conexion.php';
 
-$sql1 = "SELECT * FROM participantes ORDER BY Ganadas DESC";
+$sql1 = "SELECT * FROM participantes  WHERE Rol NOT LIKE 'admin' ORDER BY Ganadas DESC";
 
 $resultado1 = $mysqli->query($sql1);
 
-$sql2 = "SELECT * FROM participantes ORDER BY Ganadas DESC";
+$sql2 = "SELECT * FROM participantes WHERE Rol NOT LIKE 'admin' ORDER BY Ganadas DESC";
 
 $resultado2 = $mysqli->query($sql2);
 ?>
