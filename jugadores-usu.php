@@ -80,14 +80,42 @@
     </div>
     </div>
     <?php     
-}
-    
-    echo "<p><a href='index-USU.php'>Volver</a></p>";
-        
+}       
     $mysqli->close();
     }
     ?>
+    <p class="boton"><button type="submit" class="btn btn-primary" name="submit"><a href="index-cliente.php">Volver</a></button></p>
 </div>
+<footer class="pie">
+        <div class="pie-img"><img src="imagenes/pokemon.png"></div>
+        <div class="juegos">
+            <ul>
+                <h3>¡¡¡Los mejores juegos!!!</h3>
+                <li>Pokémon Blanco</li>
+                <li>Pokémon Rojo Fuego</li>
+                <li>Pokémon Zafiro Alfa</li>
+            </ul>
+        </div>
+        <div class="social">
+            <ul>
+                <h3>Síguenos<h3>
+                <li>
+                    <i><a href="https://www.instagram.com/pokemon/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"></a>
+                    </i>
+                    <i>
+                    <a href="https://www.facebook.com/PokemonOficialES/?locale=es_LA" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"></a>
+                    </i>
+                    <i>
+                        <a href="https://x.com/pokemon_es_esp" target="_blank">
+                            <img src="imagenes/twitter.png">
+                        </a>
+                    </i>
+                </li>
+            </ul>
+        </div>
+    </footer>
 </body>
 <script src="bootstrap.bundle.min.js"></script>
 </html>

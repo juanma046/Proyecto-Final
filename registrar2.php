@@ -21,14 +21,6 @@
 
     //Se ejecuta la sentencia y se guarda el resultado en $resulado1
     $resultado = $mysqli->query($sql1);
-//
-    //$id_participante = "SELECT id_participante FROM participantes WHERE Nombre LIKE '$nombre'";
-    //$result = $mysqli->query($id_participante);
-//
-    //////Repetimos todo lo anterior pero insertando el pokemon del participante
-    //$fila = $result->fetch_assoc();
-    //$sql2 = "INSERT INTO individuo_pokemon (id_participante, id_pokemon, nivel) VALUES ('$fila[id_participante]','$pokemon','$nivel')";
-    //$resultado2 = $mysqli->query($sql2);
 
     //Si se se han guardado los registros se vuelve al index
     if ($resultado > 0){

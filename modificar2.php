@@ -7,20 +7,25 @@
 		
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="registrar.css">
 		
 		<title>Torneo Pokémon</title>
 	</head>
 	<body>
-		<?php
+		<div class="contendor">
+			<main>
+			<?php
 			//Establezco conexión
 			require 'conexion.php';
 
 			//Obtengo los datos introducidos en el formulario anterior
 			$id = $_POST["id"];
+			$nombre = $_POST['nombre'];
+    		$clave = $_POST['clave'];
 			$ID_pokemon = $_POST["pokemon"];
 	
 			//Se repara la sentencia SQL
-			$sql = "UPDATE participantes SET individuo_pokemon='$ID_pokemon' WHERE id_participante=$id";
+			$sql = "UPDATE participantes SET Nombre='$nombre',Contraseña='$clave',individuo_pokemon='$ID_pokemon' WHERE id_participante=$id";
 			//Se ejecuta la sentencia y se guarda el resultado en $resultado
 			$resultado = $mysqli->query($sql);
 
@@ -37,5 +42,8 @@
 			echo "<br>";
 			echo "<button class='btn btn-primary'><a href='jugadores.php?id=$fila[id_participante]' class='text-white'> Regresar</a></button>";
 		?>
+			</main>
+		</div>
 	</body>
+
 </html>

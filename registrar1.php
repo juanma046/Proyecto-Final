@@ -1,5 +1,4 @@
 
-
 <?php
 	require 'conexion.php';
     $sql = "SELECT * FROM pokémon";
@@ -18,7 +17,7 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="registrar.css">
 		
-		<title>Proyecto Actividad Juegos</title>
+		<title>Registrar nuevo participante</title>
 	</head>
 	<body>
 
@@ -29,20 +28,20 @@
 					<form action="registrar2.php" method="post">
                     <div class="form-group">
 						<div class="form-group">
-							<!-- Tiempo jugado  -->
+							<!-- Nombre  -->
 							<label for="formControlInput" class="form-label">Nombre del usuario</label>
 							<input type="text" class="form-control" id="formControlInput" name="nombre">
 						</div>
 
                         <div class="form-group">
-							<!-- Tiempo jugado  -->
+							<!-- Contraseña  -->
 							<label for="formControlInput" class="form-label">Contraseña</label>
 							<input type="text" class="form-control" id="formControlInput" name="clave">
 						</div>
 						
 						<div class="form-group">
-							<!-- Juegos -->
-							<label for="formControlInput" class="form-label">Juegos</label>
+							<!-- Pokémon -->
+							<label for="formControlInput" class="form-label">Elige su pokémon</label>
 							<?php 
                                 echo "<select name='pokemon'>";
                                 while($fila = $resultado->fetch_assoc()){
@@ -66,3 +65,4 @@
 		<script src="js/bootstrap.min.js" ></script>
 	</body>
 </html>
+
