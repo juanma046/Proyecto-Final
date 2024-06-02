@@ -67,6 +67,7 @@
     <?php     
         }else{
             $media = ($fila['Ganadas'] / $fila['Jugadas']) * 100;
+            $redondeo = round($media);
             $nombre = $fila['Nombre'];
     ?>
     <div class="card"><!-- Creamos la card utilizando la clase card -->
@@ -77,7 +78,7 @@
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><p>Partidas Jugadas: <?php echo $fila['Jugadas'];?> </p></li>
                 <li class="list-group-item"><p>Partidas Ganadas: <?php echo $fila['Ganadas'];?></p></li>
-                <li class="list-group-item"><p>Media de Victorias: <?php echo $media?> %</p></li>
+                <li class="list-group-item"><p>Media de Victorias: <?php echo $redondeo?> %</p></li>
             </ul>
     <?php
             echo "<button class='btn btn-warning'><a href='modificar.php?id=$id class='text-white'>Modificar Información del Jugador</a></button>";

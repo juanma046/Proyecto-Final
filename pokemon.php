@@ -47,9 +47,7 @@
             <div class="navbar-collapse" id="menu"><!--navbar-collapse es para agrupar el contenido de la barra de navegación pora breakpoint determinado.-->
                      <!--  navbar permite anclar la barra de navegación a la parte superior o inferior de la pantalla y que siempre sea visible -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0"><!--me-auto es para centrar horizontalmente contenido de nivel de bloque de ancho fijo, es decir, contenido que tiene display: block y un conjunto width , configurando los márgenes horizontales en auto -->
-                    <li class="nav-item">
-                            <a href='registro-jugador.php?id=<?php echo $id; ?>' class='text-white nav-link'>Registro de Combates</a>
-                        </li>
+                        <li class="nav-item"><a href="pokemon.php" class="nav-link">Lista de Pokemons</a></li>
                         <li class="nav-item">
                             <a href='combate-usuario.php?id=<?php echo $id; ?>' class='text-white nav-link'>Simulador de Combate</a>
                         </li>
@@ -88,7 +86,8 @@ while ($fila2 = $resultado2->fetch_assoc()) {
         echo "<td>$media %</td>";
     } else {
         $media = ($ganadas / $jugadas) * 100;
-        echo "<td>$media %</td>";
+        $redondeo = round($media);
+        echo "<td>$redondeo %</td>";
     }
     echo "</tr>";
 }
@@ -110,7 +109,7 @@ $mysqli->close();
                 <div class="navbar-collapse" id="menu"><!--navbar-collapse es para agrupar el contenido de la barra de navegación pora breakpoint determinado.-->
                      <!--  navbar permite anclar la barra de navegación a la parte superior o inferior de la pantalla y que siempre sea visible -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0"><!--me-auto es para centrar horizontalmente contenido de nivel de bloque de ancho fijo, es decir, contenido que tiene display: block y un conjunto width , configurando los márgenes horizontales en auto -->
-                        <li class="nav-item"><a href="pokemon.php" class="nav-link">Registro de Combates</a></li>
+                        <li class="nav-item"><a href="registros.php" class="nav-link">Registro de Combates</a></li>
                         <li class="nav-item"><a href="enfrentamiento1.php" class="nav-link">Simulador de Combate</a></li>
                         <li class="nav-item"><a href="salir.php" class="nav-link">Cerrar sesión</a></li>
                     </ul>
@@ -147,7 +146,8 @@ while ($fila2 = $resultado2->fetch_assoc()) {
         echo "<td>$media %</td>";
     } else {
         $media = ($ganadas / $jugadas) * 100;
-        echo "<td>$media %</td>";
+        $redondeo = round($media);
+        echo "<td>$redondeo %</td>";
     }
     echo "</tr>";
 }
