@@ -195,6 +195,8 @@ h1{
     text-align: center;
 }
 
+
+
 .batalla-container {
     display: flex;
     justify-content: center;
@@ -299,6 +301,15 @@ h1{
 }
 
 .login input[type='submit']{
+	background-color: #48e;
+	color: #fff;
+	width: calc(80% - 20px);
+	margin: 0 10%;
+	margin-top: 22px;
+	border: none;
+}
+
+.contenedor input[type='submit']{
 	background-color: #48e;
 	color: #fff;
 	width: calc(80% - 20px);

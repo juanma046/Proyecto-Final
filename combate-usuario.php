@@ -84,7 +84,7 @@ if ($resultado2->num_rows > 0) {
     <form action="combate-usuario2.php" method="POST">
         <input type="hidden" name="id_participante1" value="<?php echo $fila1['id_participante']; ?>">
         <input type="hidden" name="id_participante2" value="<?php echo $fila2['id_participante']; ?>">
-        <p class="boton"><button class="btn btn-primary"><input type="submit" class="submit"></button></p>
+        <input type="submit" class="submit" value="Comenzar el Combate">
     </form>
     </div>
 </body>

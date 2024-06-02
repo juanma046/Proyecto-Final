@@ -74,7 +74,6 @@
                     <img src="pokemon gif/<?php echo $modelo; ?>" /> <!-- Agregamos la imagen superior usando img-top -->
             <div class="card-body"> <!-- Rellenamos la card con la clase body -->
                     <h1 class="card-title"><?php echo $nombre; ?></h1>
-                    <p class="card-text">ivo</p>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><p>Partidas Jugadas: <?php echo $fila['Jugadas'];?> </p></li>
                 <li class="list-group-item"><p>Partidas Ganadas: <?php echo $fila['Ganadas'];?></p></li>
