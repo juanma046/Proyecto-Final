@@ -16,7 +16,6 @@
 
    $sql2 = "SELECT * FROM pokémon";
    $resultado2 = $mysqli->query($sql2);
-   $fila2 = $resultado2->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="en">

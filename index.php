@@ -14,7 +14,6 @@
     
     $sql1 = "SELECT * FROM participantes WHERE id_participante <> $id ORDER BY Ganadas DESC";
     $resultado1 = $mysqli->query($sql1);
-    $fila1 = $resultado1->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
