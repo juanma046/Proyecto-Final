@@ -8,11 +8,13 @@
        header("location:login.php");
    }else{
    
-   $sql = "SELECT * FROM participantes WHERE Nombre LIKE '$id'";
+   $sql = "SELECT * FROM participantes WHERE id_participante LIKE '$id'";
    $resultado = $mysqli->query($sql);
    $fila = $resultado->fetch_assoc();
    //$id = $fila['id_participante'];
    $rol = $fila['Rol'];
+   $nombre_activo = $fila['Nombre'];
+
 
    $sql2 = "SELECT *, (Jugadas + Ganadas) / 2 AS media FROM pokémon ORDER BY media DESC;";
    $resultado2 = $mysqli->query($sql2);
@@ -39,24 +41,33 @@
 <?php
    if ($rol == 'usu'){
     ?>
-    <header>  
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"><!-- Boton para el menu movil -->
-            <div class="container-fluid"> <!-- Determina el width y el height como 100% -->
-                <img src="imagenes/escudo.svg" class="escudo">
-            <div class="navbar-collapse" id="menu"><!--navbar-collapse es para agrupar el contenido de la barra de navegación pora breakpoint determinado.-->
-                     <!--  navbar permite anclar la barra de navegación a la parte superior o inferior de la pantalla y que siempre sea visible -->
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0"><!--me-auto es para centrar horizontalmente contenido de nivel de bloque de ancho fijo, es decir, contenido que tiene display: block y un conjunto width , configurando los márgenes horizontales en auto -->
-                        <li class="nav-item"><a href="index-cliente.php" class="nav-link">Página Principal</a></li>
-                        <li class="nav-item">
-                            <a href='combate-usuario.php?id=<?php echo $id; ?>' class='text-white nav-link'>Simulador de Combate</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href='datos.php?id=<?php echo $id; ?>' class='text-white nav-link'>Tus datos</a>
-                        </li>
-                        <li class="nav-item"><a href="salir.php" class="nav-link">Cerrar sesión</a></li>
-                    </ul>
-                </nav>
-        </header>                         
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <img src="imagenes/escudo.svg" class="escudo">
+            <div class="navbar-collapse" id="menu">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a href="pokemon.php" class="nav-link">Lista de Pokemons</a></li>
+                    <li class="nav-item">
+                        <a href='registro-jugador.php?id=<?php echo $id; ?>' class='text-white nav-link'>Registro de Combates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href='combate-usuario.php?id=<?php echo $id; ?>' class='text-white nav-link'>Simulador de Combate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href='datos.php?id=<?php echo $id; ?>' class='text-white nav-link'>Tus datos</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <span class="navbar-text text-white">Hola <?php echo $nombre_activo; ?> - </span>
+                        <a href="salir.php" class="nav-link d-inline">Cerrar sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>                        
 <?php
 echo "<div class='contenedor-tabla'>";
 echo "<main>";
