@@ -90,8 +90,8 @@ $fila = $resultado->fetch_assoc();
 }       
     $mysqli->close();
     
+    echo "<button class='btn btn-primary'><a href='index-cliente.php?id=$id' class='text-white'> Volver</a></button>";
     ?>
-    <p class="boton"><button type="submit" class="btn btn-primary" name="submit"><a href="index-cliente.php">Volver</a></button></p>
 </div>
 <footer class="pie">
         <div class="pie-img"><img src="imagenes/pokemon.png"></div>

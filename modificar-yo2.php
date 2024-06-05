@@ -34,13 +34,14 @@
 			$fila = $resultado2->fetch_assoc();
 	
 			if($resultado > 0){
-				echo "<button type='button' class='btn btn-lg btn-primary' disabled>El registro ha sido editado correctamente</button>";
+				echo "<button type='button' class='btn btn-lg btn-primary' disabled>El registro ha sido editado correctamente, debes regresar a la pantalla de inicio de sesión para asegurar los cambios</button>";
 			   //header("Location: index.php");
 			}else{
 				echo "<p class='bg-danger text-white'>Ha habido un error al modificar un registro</p>";
 			}
 			echo "<br>";
-			echo "<button class='btn btn-primary'><a href='datos.php?id=$fila[id_participante]' class='text-white'> Regresar</a></button>";
+			
+			echo "<button class='btn btn-primary'><a href='login.php' class='text-white'> Iniciar sesión</a></button>";
 		?>
 			</main>
 		</div>

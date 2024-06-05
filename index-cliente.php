@@ -1,20 +1,17 @@
 <?php
 require 'conexion.php';
 session_start();
-$usuario = $_SESSION['username'];
+$id = $_SESSION['id'];
 
-if (!isset($usuario)) {
+if (!isset($id)) {
     header("location:login.php");
 }else{
     // Obtener los datos del usuario activo
-$sql = "SELECT * FROM participantes WHERE Nombre = '$usuario'";
+$sql = "SELECT * FROM participantes WHERE id_participante = '$id'";
 $resultado = $mysqli->query($sql);
 $fila = $resultado->fetch_assoc();
-$id = $fila['id_participante'];
+//$id = $fila['id_participante'];
 $nombre_activo = $fila['Nombre'];
-
-
-$id_usuario = $fila['id_participante']; // Obtener el ID del usuario activo
 
 // Obtener los participantes ordenados por ganadas
 $sql1 = "SELECT * FROM participantes WHERE id_participante <> $id AND rol NOT LIKE 'admin' ORDER BY Ganadas DESC";
@@ -43,10 +40,10 @@ $resultado1 = $mysqli->query($sql1);
                         <a href='registro-jugador.php?id=<?php echo $id; ?>' class='text-white nav-link'>Registro de Combates</a>
                     </li>
                     <li class="nav-item">
-                        <a href='combate-usuario.php?id=<?php echo $id_usuario; ?>' class='text-white nav-link'>Simulador de Combate</a>
+                        <a href='combate-usuario.php?id=<?php echo $id; ?>' class='text-white nav-link'>Simulador de Combate</a>
                     </li>
                     <li class="nav-item">
-                        <a href='datos.php?id=<?php echo $id_usuario; ?>' class='text-white nav-link'>Tus datos</a>
+                        <a href='datos.php?id=<?php echo $id; ?>' class='text-white nav-link'>Tus datos</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
