@@ -14,7 +14,7 @@
    $id = $fila['id_participante'];
    $rol = $fila['Rol'];
 
-   $sql2 = "SELECT * FROM pokémon";
+   $sql2 = "SELECT *, (Jugadas + Ganadas) / 2 AS media FROM pokémon ORDER BY media DESC;";
    $resultado2 = $mysqli->query($sql2);
 ?>
 <!DOCTYPE html>
@@ -73,6 +73,7 @@ echo "</tr>";
 while ($fila2 = $resultado2->fetch_assoc()) {
     $jugadas = $fila2['Jugadas'];
     $ganadas = $fila2['Ganadas'];
+    $media = $fila2['media'];
     echo "<tr>";
     echo "<td>";
     ?>
@@ -83,14 +84,7 @@ while ($fila2 = $resultado2->fetch_assoc()) {
     echo "<td>$fila2[Tipo]</td>";
     echo "<td>$jugadas</td>";
     echo "<td>$ganadas</td>";
-    if ($ganadas == 0) {
-        $media = 0;
-        echo "<td>$media %</td>";
-    } else {
-        $media = ($ganadas / $jugadas) * 100;
-        $redondeo = round($media);
-        echo "<td>$redondeo %</td>";
-    }
+    echo "<td>$media %</td>";
     echo "</tr>";
 }
 echo "</table>";
@@ -99,6 +93,7 @@ echo "</div>";
 
 $mysqli->close();
 ?>
+<br>
 <p class="boton"><button type="submit" class="btn btn-primary" name="submit"><a href="index-cliente.php">Volver</a></button></p>
 
     <?php
@@ -134,6 +129,7 @@ echo "</tr>";
 while ($fila2 = $resultado2->fetch_assoc()) {
     $jugadas = $fila2['Jugadas'];
     $ganadas = $fila2['Ganadas'];
+    $media = $fila2['media'];
     echo "<tr>";
     echo "<td>";
     ?>
@@ -144,14 +140,7 @@ while ($fila2 = $resultado2->fetch_assoc()) {
     echo "<td>$fila2[Tipo]</td>";
     echo "<td>$jugadas</td>";
     echo "<td>$ganadas</td>";
-    if ($ganadas == 0) {
-        $media = 0;
-        echo "<td>$media %</td>";
-    } else {
-        $media = ($ganadas / $jugadas) * 100;
-        $redondeo = round($media);
-        echo "<td>$redondeo %</td>";
-    }
+    echo "<td>$media %</td>";
     echo "</tr>";
 }
 echo "</table>";
@@ -160,6 +149,7 @@ echo "</div>";
 
 $mysqli->close();
 ?>
+<br>
 <p class="boton"><button type="submit" class="btn btn-primary" name="submit"><a href="index.php">Volver</a></button></p>
     <?php
    }

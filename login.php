@@ -20,11 +20,14 @@
             <input type="submit" value="Iniciar Sesión">
         </form>
         <?php
+        // Mostrar mensaje de error si existe
         if (isset($_GET['error'])) {
-            echo "<div style='color: red;'>" . $_GET['error'] . "</div>";
+            $errorMessage = $_GET['error'];
+            echo "<div style='color: red;'>$errorMessage</div>";
         }
         ?>
         </div>
     </center>
 </body>
 </html>
+

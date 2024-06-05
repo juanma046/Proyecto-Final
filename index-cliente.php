@@ -11,6 +11,7 @@ $sql = "SELECT * FROM participantes WHERE Nombre = '$usuario'";
 $resultado = $mysqli->query($sql);
 $fila = $resultado->fetch_assoc();
 $id = $fila['id_participante'];
+$nombre_activo = $fila['Nombre'];
 
 
 $id_usuario = $fila['id_participante']; // Obtener el ID del usuario activo
@@ -31,28 +32,34 @@ $resultado1 = $mysqli->query($sql1);
 </head>
 <body>
 <div class='contenedor'>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <div class="container-fluid">
-                <img src="imagenes/escudo.svg" class="escudo">
-                <div class="navbar-collapse" id="menu">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a href="pokemon.php" class="nav-link">Lista de Pokemons</a></li>
-                        <li class="nav-item">
-                            <a href='registro-jugador.php?id=<?php echo $id; ?>' class='text-white nav-link'>Registro de Combates</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href='combate-usuario.php?id=<?php echo $id_usuario; ?>' class='text-white nav-link'>Simulador de Combate</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href='datos.php?id=<?php echo $id_usuario; ?>' class='text-white nav-link'>Tus datos</a>
-                        </li>
-                        <li class="nav-item"><a href="salir.php" class="nav-link">Cerrar Sesión</a></li>
-                    </ul>
-                </div>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <img src="imagenes/escudo.svg" class="escudo">
+            <div class="navbar-collapse" id="menu">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a href="pokemon.php" class="nav-link">Lista de Pokemons</a></li>
+                    <li class="nav-item">
+                        <a href='registro-jugador.php?id=<?php echo $id; ?>' class='text-white nav-link'>Registro de Combates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href='combate-usuario.php?id=<?php echo $id_usuario; ?>' class='text-white nav-link'>Simulador de Combate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href='datos.php?id=<?php echo $id_usuario; ?>' class='text-white nav-link'>Tus datos</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <span class="navbar-text text-white">Hola <?php echo $nombre_activo; ?> - </span>
+                        <a href="salir.php" class="nav-link d-inline">Cerrar sesión</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
+
     <main>
     <div class="portada">
        <img src="imagenes/pokemon.png">
@@ -81,7 +88,7 @@ $resultado1 = $mysqli->query($sql1);
     ?>
     </main>
     <footer class="pie">
-        <div class="pie-img"><img src="imagenes/pokemon.png"></div>
+        <div class="pie-img"><img src="imagenes/pokemon.png"></div> 
         <div class="juegos">
             <ul>
                 <h3>¡¡¡Los mejores juegos!!!</h3>
