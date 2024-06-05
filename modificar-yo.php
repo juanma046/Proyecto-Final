@@ -45,7 +45,7 @@ $id = $_GET['id'];
                         <div class="form-group">
 							<!-- Contraseña  -->
 							<label for="formControlInput" class="form-label">Introduce la nueva contraseña para el usuario</label>
-							<input type="text" class="form-control" id="formControlInput" name="clave" required>
+							<input type="password" class="form-control" id="formControlInput" name="clave" required>
 						</div>
 						
 						<div class="form-group">
