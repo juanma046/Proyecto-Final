@@ -13,12 +13,12 @@ if (isset($_POST['usuario']) && isset($_POST['clave'])) {
     if ($resultado->num_rows > 0) { // Verificamos si hay al menos una fila devuelta
         $fila = $resultado->fetch_assoc();
         $_SESSION['id'] = $fila['id_participante'];
-        $_SESSION['rol'] = $fila['rol'];
+        $rol = $fila['Rol'];
 
-        if ($fila['rol'] == "admin") {
+        if ($rol == "admin") {
             header("Location: index.php");
             exit();
-        } else {
+        } elseif ($rol == "usu") {
             header("Location: index-cliente.php");
             exit();
         }
