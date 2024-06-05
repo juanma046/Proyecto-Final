@@ -54,6 +54,7 @@
 						<div class="form-group">
 							<!-- Registrar -->
 							<button type="submit" class="btn btn-primary" name="submit">Registrar</button>
+							<br>
 					</form>
 				</div>
 			</div>

@@ -13,18 +13,23 @@
 <body>
 <div class='contenedor'> <!-- Le damos un tamaño medio de 4 a cada columna --> 
 <header>  
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"><!-- Boton para el menu movil -->
-            <div class="container-fluid"> <!-- Determina el width y el height como 100% -->
-                <img src="imagenes/escudo.svg" class="escudo">
-                <div class="navbar-collapse" id="menu"><!--navbar-collapse es para agrupar el contenido de la barra de navegación pora breakpoint determinado.-->
-                     <!--  navbar permite anclar la barra de navegación a la parte superior o inferior de la pantalla y que siempre sea visible -->
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0"><!--me-auto es para centrar horizontalmente contenido de nivel de bloque de ancho fijo, es decir, contenido que tiene display: block y un conjunto width , configurando los márgenes horizontales en auto -->
-                        <li class="nav-item"><a href="index.php" class="nav-link">Página Principal</a></li>
-                        <li class="nav-item"><a href="enfrentamiento1.php" class="nav-link">Simulador de Combate</a></li>
-                        <li class="nav-item"><a href="salir.php" class="nav-link">Cerrar sesión</a></li>
-                    </ul>
-                </nav>
-        </header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <img src="imagenes/escudo.svg" class="escudo">
+            <div class="navbar-collapse" id="menu">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a href="pokemon.php" class="nav-link">Lista de Pokemons</a></li>
+                    <li class="nav-item"><a href="enfrentamiento1.php" class="nav-link">Simulador de Combate</a></li>
+                    <li class="nav-item"><a href="registros.php" class="nav-link">Registro de Enfrentamientos</a></li>
+                    <li class="nav-item"><a href="registrar1.php" class="nav-link">Registrar nuevo usuario</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item" style="margin-right: 20px;"><a href="salir.php" class="nav-link" style="font-weight: bold;">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 <?php
     //Recogemos el id del participante
     $id = $_GET['id'];
