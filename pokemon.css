@@ -100,35 +100,53 @@ h1{
 
 /* Css de la carta del usuario */
 
-.card {
+.main-carta {
+
+        margin-top: 200px;
+        color: #fff;
+        background:#353534;
+        padding: 20px;
+        width:100%;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center; /* Centra el contenido horizontalmente */
+        align-items: center; /* Centra el contenido verticalmente */
+        flex-direction: column; /* Alinea los elementos en columna */
+    
+}
+
+.carta {
+    width: 400px; /* Ancho de la carta */
+    border: 1px solid #ccc; /* Borde de la carta */
+    border-radius: 10px; /* Borde redondeado */
+    overflow: hidden; /* Evita que los bordes redondeados se vean afectados por contenido interno */
+    padding: 20px;
+    width:100%;
+    margin-bottom: 20px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 250px;
-    width: 100%;
-    box-sizing: border-box;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    flex-direction: column; /* Alinea los elementos en columna */
+}
+
+.carta img {
+    width: 100%; /* Ajusta la imagen al ancho de la carta */
+    display: block; /* Hace que la imagen se muestre como bloque, lo que elimina el espacio adicional */
+}
+
+.cuerpo {
+    padding: 20px; /* Espacio interno dentro del cuerpo de la carta */
+    background-color: #f0f0f0; /* Color de fondo del cuerpo de la carta */
+}
+
+.titulo-carta {
+    margin-bottom: 10px; /* Espacio entre el título y el resto del cuerpo */
 }
 
 
-.card img{
-    width: 350px;
-    margin-bottom: 30px;
-}
 
-.card-body {
-    background-color: #353534;
-    color: white;
-}
 
-.card a{
-    color: white;
-    text-decoration: none;
-}
 
-.card a:hover{
-    color:black
-}
 
 /* Css del Pie de Página */
 
@@ -225,19 +243,6 @@ h1{
     margin:20px;
 }
 
-.pokemon-carta {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    margin-top: 10px;
-    width: 150px;
-    text-align: center;
-}
-.pokemon-carta p {
-    margin: 5px 0;
-    font-size: 14px;
-}
 
 .mensaje {
     margin-top: 30px;

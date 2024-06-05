@@ -14,7 +14,7 @@ $sql1 = "SELECT * FROM participantes WHERE id_participante='$id'";
 $resultado1 = $mysqli->query($sql1);
 
 //Obtener los combates en los que participo el jugador
-$sql = "SELECT * FROM enfrentamiento WHERE id_oponente1 = $id OR id_oponente2 = $id";
+$sql = "SELECT * FROM enfrentamiento WHERE id_oponente1 = $id OR id_oponente2 = $id ORDER BY fecha";
 $resultado = $mysqli->query($sql);
 $fila_registro = $resultado->fetch_assoc();
 

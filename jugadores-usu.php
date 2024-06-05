@@ -85,6 +85,8 @@
     $mysqli->close();
     }
     ?>
+    <br>
+    <br>
     <p class="boton"><button type="submit" class="btn btn-primary" name="submit"><a href="index-cliente.php">Volver</a></button></p>
 </div>
 <footer class="pie">
