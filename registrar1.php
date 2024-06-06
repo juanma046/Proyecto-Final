@@ -56,6 +56,12 @@
 							<button type="submit" class="btn btn-primary" name="submit">Registrar</button>
 							<br>
 					</form>
+					<?php 
+						echo "<br>";
+						if (isset($_GET['error']) && $_GET['error'] == 'nombre_existente') {
+							echo "<p class='bg-danger text-white'>El nombre de usuario ya está en uso, por favor prueba otro.</p>";
+						}
+					?>
 				</div>
 			</div>
 		</div>

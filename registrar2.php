@@ -17,6 +17,16 @@
     $jugadas = 0;
     $ganadas = 0;
 
+    // Verifico si el nombre del participante ya existe
+	$sql_check = "SELECT * FROM participantes WHERE Nombre='$nombre'";
+	$resultado_check = $mysqli->query($sql_check);
+	
+		if ($resultado_check->num_rows > 0) {
+			// El participante ya existe
+			header("Location: registrar1.php?error=nombre_existente");
+			exit();
+		}
+
     //Se prepara la sentencia SQL
     $sql1 = "INSERT INTO participantes (Nombre,Contraseña, Rol, individuo_pokemon, Jugadas, Ganadas) VALUES ('$nombre','$clave','$rol','$ID_pokemon','$jugadas','$ganadas')";
 

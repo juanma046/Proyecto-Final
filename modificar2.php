@@ -30,7 +30,7 @@
 	
 			if ($resultado_check->num_rows > 0) {
 				// El participante ya existe
-				header("Location: modificar-yo.php?id=$id&error=nombre_existente");
+				header("Location: modificar.php?id=$id&error=nombre_existente");
 				exit();
 			}
 	
