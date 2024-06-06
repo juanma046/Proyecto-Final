@@ -24,6 +24,16 @@
 			$nombre = $_POST['nombre'];
     		$clave = $_POST['clave'];
 			$ID_pokemon = $_POST["pokemon"];
+
+			// Verifico si el nombre del participante ya existe
+			$sql_check = "SELECT * FROM participantes WHERE Nombre='$nombre' AND id_participante != '$id'";
+			$resultado_check = $mysqli->query($sql_check);
+	
+			if ($resultado_check->num_rows > 0) {
+				// El participante ya existe
+				header("Location: modificar-yo.php?id=$id&error=nombre_existente");
+				exit();
+			}
 	
 			//Se repara la sentencia SQL
 			$sql = "UPDATE participantes SET Nombre='$nombre',Contraseña='$clave',individuo_pokemon='$ID_pokemon' WHERE id_participante=$id";

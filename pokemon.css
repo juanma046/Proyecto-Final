@@ -101,7 +101,6 @@ h1{
 /* Css de la carta del usuario */
 
 .main-carta {
-
         margin-top: 200px;
         color: #fff;
         background:#353534;
@@ -109,38 +108,35 @@ h1{
         width:100%;
         margin-bottom: 20px;
         display: flex;
-        justify-content: center; /* Centra el contenido horizontalmente */
-        align-items: center; /* Centra el contenido verticalmente */
-        flex-direction: column; /* Alinea los elementos en columna */
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; 
     
 }
 
 .carta {
-    width: 400px; /* Ancho de la carta */
-    border: 1px solid #ccc; /* Borde de la carta */
-    border-radius: 10px; /* Borde redondeado */
-    overflow: hidden; /* Evita que los bordes redondeados se vean afectados por contenido interno */
+    width: 400px;
     padding: 20px;
     width:100%;
     margin-bottom: 20px;
     display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
-    flex-direction: column; /* Alinea los elementos en columna */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .carta img {
-    width: 100%; /* Ajusta la imagen al ancho de la carta */
-    display: block; /* Hace que la imagen se muestre como bloque, lo que elimina el espacio adicional */
+    width: 100%; 
+    display: block;
 }
 
 .cuerpo {
-    padding: 20px; /* Espacio interno dentro del cuerpo de la carta */
-    background-color: #f0f0f0; /* Color de fondo del cuerpo de la carta */
+    padding: 20px;
+    background-color: #f0f0f0;
 }
 
 .titulo-carta {
-    margin-bottom: 10px; /* Espacio entre el título y el resto del cuerpo */
+    margin-bottom: 10px;
 }
 
 

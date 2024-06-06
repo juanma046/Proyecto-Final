@@ -39,13 +39,13 @@ $id = $_GET['id'];
 							<!-- Nmbre de usuario  -->
 							<label for="formControlInput" class="form-label">Introduce el nuevo nombre del usuario</label>
 							<input type="hidden" name="id" value="<?php echo $fila['id_participante']; ?>">
-							<input type="text" class="form-control" id="formControlInput" name="nombre" required>
+                        <input type="text" class="form-control" id="formControlInput" name="nombre" value="<?php echo $fila['Nombre']; ?>" required>
 						</div>
 
                         <div class="form-group">
 							<!-- Contraseña  -->
 							<label for="formControlInput" class="form-label">Introduce la nueva contraseña para el usuario</label>
-							<input type="password" class="form-control" id="formControlInput" name="clave" required>
+							<input type="password" class="form-control" id="formControlInput" name="clave" value="<?php echo $fila['Contraseña']; ?>" required>
 						</div>
 						
 						<div class="form-group">
@@ -64,6 +64,12 @@ $id = $_GET['id'];
 							<!-- Cambiar -->
 							<button type="submit" class="btn btn-primary" name="submit">Cambiar</button>
 					</form>
+					<?php
+					echo "<br>";
+                if (isset($_GET['error']) && $_GET['error'] == 'nombre_existente') {
+                    echo "<p class='bg-danger text-white'>El nombre de usuario ya está en uso, por favor prueba otro.</p>";
+                }
+            ?>
 				</div>
 			</div>
 		</div>
