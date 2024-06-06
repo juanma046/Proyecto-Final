@@ -6,7 +6,7 @@ $sql1 = "SELECT * FROM participantes";
 $resultado1 = $mysqli->query($sql1);
 
 //Obtener los combates
-$sql2 = "SELECT * FROM enfrentamiento";
+$sql2 = "SELECT * FROM enfrentamiento ORDER BY fecha";
 $resultado2 = $mysqli->query($sql2);
 
 ?>

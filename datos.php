@@ -52,7 +52,8 @@ $fila = $resultado->fetch_assoc();
             $nombre = $fila['Nombre'];
     ?>
         <div class="carta">
-    <div class="card"><!-- Creamos la card utilizando la clase card -->
+            <main class="main-carta">
+            <div class="card"><!-- Creamos la card utilizando la clase card -->
                     <img src="pokemon gif/<?php echo $modelo; ?>" /> <!-- Agregamos la imagen superior usando img-top -->
             <div class="card-body"> <!-- Rellenamos la card con la clase body -->
                     <h1 class="card-title"><?php echo $nombre_pokemon; ?></h1>
@@ -63,6 +64,8 @@ $fila = $resultado->fetch_assoc();
             </ul>
             </div>
         </div>
+            </main>
+    </div>
     <?php     
         }else{
             $media = ($fila['Ganadas'] / $fila['Jugadas']) * 100;
@@ -70,7 +73,8 @@ $fila = $resultado->fetch_assoc();
             $nombre = $fila['Nombre'];
     ?>
     <div class="carta">
-    <div class="card"><!-- Creamos la card utilizando la clase card -->
+        <main class="main-carta">
+        <div class="card"><!-- Creamos la card utilizando la clase card -->
                     <img src="pokemon gif/<?php echo $modelo; ?>" /> <!-- Agregamos la imagen superior usando img-top -->
             <div class="card-body"> <!-- Rellenamos la card con la clase body -->
                     <h1 class="card-title"><?php echo $nombre; ?></h1>
@@ -84,6 +88,7 @@ $fila = $resultado->fetch_assoc();
             ?>
             </div>
         </div>
+        </main>
     </div>
     </div>
     <?php     

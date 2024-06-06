@@ -49,7 +49,8 @@
                 $nombre = $fila['Nombre'];
     ?>
         <div class="carta">
-    <div class="card"><!-- Creamos la card utilizando la clase card -->
+            <main class="main-carta">
+            <div class="card"><!-- Creamos la card utilizando la clase card -->
                     <img src="pokemon gif/<?php echo $modelo; ?>" /> <!-- Agregamos la imagen superior usando img-top -->
             <div class="card-body"> <!-- Rellenamos la card con la clase body -->
                     <h1 class="card-title"><?php echo $nombre; ?></h1>
@@ -60,6 +61,7 @@
             </ul>
             </div>
         </div>
+            </main>
     <?php     
         }else{
             $media = ($fila['Ganadas'] / $fila['Jugadas']) * 100;
@@ -67,7 +69,8 @@
             $nombre = $fila['Nombre'];
     ?>
     <div class="carta">
-    <div class="card"><!-- Creamos la card utilizando la clase card -->
+        <main class="main-carta">
+        <div class="card"><!-- Creamos la card utilizando la clase card -->
                     <img src="pokemon gif/<?php echo $modelo; ?>" /> <!-- Agregamos la imagen superior usando img-top -->
             <div class="card-body"> <!-- Rellenamos la card con la clase body -->
                     <h1 class="card-title"><?php echo $nombre; ?></h1>
@@ -78,6 +81,7 @@
             </ul>
             </div>
         </div>
+        </main>
     </div>
     </div>
     <?php     
@@ -86,10 +90,9 @@
     }
     ?>
     <br>
-    <br>
     <p class="boton"><button type="submit" class="btn btn-primary" name="submit"><a href="index-cliente.php">Volver</a></button></p>
-</div>
-<footer class="pie">
+
+    <footer class="pie">
         <div class="pie-img"><img src="imagenes/pokemon.png"></div>
         <div class="juegos">
             <ul>
@@ -119,6 +122,7 @@
             </ul>
         </div>
     </footer>
+</div>
 </body>
 <script src="bootstrap.bundle.min.js"></script>
 </html>
