@@ -12,8 +12,28 @@ body{
     background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+    padding-top: 56px;
                                                 
 }
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.navbar-nav .nav-item {
+    margin-left: 10px;
+}
+
+.navbar-nav .nav-item .nav-link {
+    white-space: nowrap;
+}
+
+.navbar-nav .nav-item img {
+    max-height: 24px;
+}
+
 button a {
     outline: none;
     text-decoration: none;
@@ -30,6 +50,7 @@ button a:hover {
 	max-width:1000px;
 	width:90%;
 	margin:auto;
+    padding: 20px;
 }
 
 .portada {
@@ -150,6 +171,7 @@ h1{
     background-color: #333;
     color: white;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
@@ -179,9 +201,22 @@ h1{
 }
 
 .pie li {
-    display: block;
+    display: inline;
     margin: 5px;
 
+}
+
+@media (max-width: 500px) {
+    .pie {
+        flex-direction: column;
+        text-align: center;
+    }
+    .pie-img {
+        margin-bottom: 20px;
+    }
+    .juegos, .social {
+        margin: 20px 0;
+    }
 }
 
 /* Css de Enfrentamiento1 */

@@ -28,24 +28,21 @@
 <body>
 <div class='contenedor'> <!-- Le damos un tamaño medio de 4 a cada columna --> 
 <header>  
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
-            <img src="imagenes/escudo.svg" class="escudo">
-            <div class="navbar-collapse" id="menu">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <img src="imagenes/escudo.svg" class="escudo" alt="Escudo">
+                <div class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a href="pokemon.php" class="nav-link">Lista de Pokemons</a></li>
                     <li class="nav-item"><a href="enfrentamiento1.php" class="nav-link">Simulador de Combate</a></li>
                     <li class="nav-item"><a href="registros.php" class="nav-link">Registro de Enfrentamientos</a></li>
                     <li class="nav-item"><a href="registrar1.php" class="nav-link">Registrar nuevo usuario</a></li>
-                </ul>
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                </div>
+                <div class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item" style="margin-right: 20px;"><a href="salir.php" class="nav-link" style="font-weight: bold;">Cerrar sesión</a></li>
-                </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-</header>
-
+        </nav>
+    </header>
 
     <main>
 
@@ -77,7 +74,7 @@
     ?>
     
     <footer class="pie">
-        <div class="pie-img"><img src="imagenes/pokemon.png"></div>
+        <div class="pie-img"><img src="imagenes/pokemon.png" alt="Pokémon"></div>
         <div class="juegos">
             <ul>
                 <h3>¡¡¡Los mejores juegos!!!</h3>
@@ -88,25 +85,24 @@
         </div>
         <div class="social">
             <ul>
-                <h3>Síguenos<h3>
+                <h3>Síguenos</h3>
                 <li>
                     <i><a href="https://www.instagram.com/pokemon/" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"></a>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"></a>
                     </i>
                     <i>
                     <a href="https://www.facebook.com/PokemonOficialES/?locale=es_LA" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"></a>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"></a>
                     </i>
                     <i>
                         <a href="https://x.com/pokemon_es_esp" target="_blank">
-                            <img src="imagenes/twitter.png">
+                            <img src="imagenes/twitter.png" alt="Twitter">
                         </a>
                     </i>
                 </li>
             </ul>
         </div>
     </footer>
-</div>
     
 </body>
 </html>
