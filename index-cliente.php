@@ -29,13 +29,13 @@ $resultado1 = $mysqli->query($sql1);
 </head>
 <body>
 <div class='contenedor'>
-<header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
-            <img src="imagenes/escudo.svg" class="escudo">
-            <div class="navbar-collapse" id="menu">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a href="pokemon.php" class="nav-link">Lista de Pokemons</a></li>
+
+<header>  
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <img src="imagenes/escudo.svg" class="escudo" alt="Escudo">
+                <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a href="pokemon.php" class="nav-link">Lista de Pokemons</a></li>
                     <li class="nav-item">
                         <a href='registro-jugador.php?id=<?php echo $id; ?>' class='text-white nav-link'>Registro de Combates</a>
                     </li>
@@ -45,7 +45,7 @@ $resultado1 = $mysqli->query($sql1);
                     <li class="nav-item">
                         <a href='datos.php?id=<?php echo $id; ?>' class='text-white nav-link'>Tus datos</a>
                     </li>
-                </ul>
+                </div>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <span class="navbar-text text-white">Hola <?php echo $nombre_activo; ?> - </span>
@@ -53,9 +53,8 @@ $resultado1 = $mysqli->query($sql1);
                     </li>
                 </ul>
             </div>
-        </div>
-    </nav>
-</header>
+        </nav>
+    </header>
 
     <main>
     <div class="portada">
@@ -85,7 +84,7 @@ $resultado1 = $mysqli->query($sql1);
     ?>
     </main>
     <footer class="pie">
-        <div class="pie-img"><img src="imagenes/pokemon.png"></div> 
+        <div class="pie-img"><img src="imagenes/pokemon.png" alt="Pokémon"></div>
         <div class="juegos">
             <ul>
                 <h3>¡¡¡Los mejores juegos!!!</h3>
@@ -96,18 +95,18 @@ $resultado1 = $mysqli->query($sql1);
         </div>
         <div class="social">
             <ul>
-                <h3>Síguenos<h3>
+                <h3>Síguenos</h3>
                 <li>
                     <i><a href="https://www.instagram.com/pokemon/" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"></a>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"></a>
                     </i>
                     <i>
                     <a href="https://www.facebook.com/PokemonOficialES/?locale=es_LA" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"></a>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"></a>
                     </i>
                     <i>
                         <a href="https://x.com/pokemon_es_esp" target="_blank">
-                            <img src="imagenes/twitter.png">
+                            <img src="imagenes/twitter.png" alt="Twitter">
                         </a>
                     </i>
                 </li>

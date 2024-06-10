@@ -41,13 +41,12 @@
 <?php
    if ($rol == 'usu'){
     ?>
-    <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
-            <img src="imagenes/escudo.svg" class="escudo">
-            <div class="navbar-collapse" id="menu">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a href="pokemon.php" class="nav-link">Lista de Pokemons</a></li>
+<header>  
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <img src="imagenes/escudo.svg" class="escudo" alt="Escudo">
+                <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a href="index-cliente.php?id=<?php echo $id; ?>" class="nav-link">Menú Principal</a></li>
                     <li class="nav-item">
                         <a href='registro-jugador.php?id=<?php echo $id; ?>' class='text-white nav-link'>Registro de Combates</a>
                     </li>
@@ -57,7 +56,7 @@
                     <li class="nav-item">
                         <a href='datos.php?id=<?php echo $id; ?>' class='text-white nav-link'>Tus datos</a>
                     </li>
-                </ul>
+                </div>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <span class="navbar-text text-white">Hola <?php echo $nombre_activo; ?> - </span>
@@ -65,9 +64,8 @@
                     </li>
                 </ul>
             </div>
-        </div>
-    </nav>
-</header>                        
+        </nav>
+    </header>                
 <?php
 echo "<div class='contenedor-tabla'>";
 echo "<main>";

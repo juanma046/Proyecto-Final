@@ -9,7 +9,7 @@
 </head>
 <body>
     <center>
-        <div class="contenedor">
+        <div class="contenedor-login">
         <form action="loguear.php" method="POST" class="login">
             <img src="imagenes/escudo.svg" width="200px" class="escudo">
             <br>

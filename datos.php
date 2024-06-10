@@ -13,6 +13,7 @@ $id = $_GET['id'];
 $sql = "SELECT * FROM participantes WHERE id_participante='$id'";
 $resultado = $mysqli->query($sql);
 $fila = $resultado->fetch_assoc();
+$nombre_activo = $fila['Nombre'];
 
     $id_poke = $fila['individuo_pokemon'];
     $sqlpoke = "SELECT * FROM pokémon WHERE id_pokemon LIKE '$id_poke'";
@@ -34,18 +35,30 @@ $fila = $resultado->fetch_assoc();
 <body>
 <div class='contenedor'> <!-- Le damos un tamaño medio de 4 a cada columna --> 
 <header>  
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"><!-- Boton para el menu movil -->
-            <div class="container-fluid"> <!-- Determina el width y el height como 100% -->
-                <img src="imagenes/escudo.svg" class="escudo">
-                <div class="navbar-collapse" id="menu"><!--navbar-collapse es para agrupar el contenido de la barra de navegación pora breakpoint determinado.-->
-                     <!--  navbar permite anclar la barra de navegación a la parte superior o inferior de la pantalla y que siempre sea visible -->
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0"><!--me-auto es para centrar horizontalmente contenido de nivel de bloque de ancho fijo, es decir, contenido que tiene display: block y un conjunto width , configurando los márgenes horizontales en auto -->
-                    <li class="nav-item"><a href="index-cliente.php" class="nav-link">Página principal</a></li>
-                        <li class="nav-item"><a href="pokemon.php" class="nav-link">Lista de Pokemons</a></li>
-                        <li class="nav-item"><a href="salir.php" class="nav-link">Cerrar sesión</a></li>
-                    </ul>
-                </nav>
-        </header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <img src="imagenes/escudo.svg" class="escudo" alt="Escudo">
+                <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a href="index-cliente.php?id=<?php echo $id; ?>" class="nav-link">Menú Principal</a></li>
+                    <li class="nav-item">
+                        <a href='registro-jugador.php?id=<?php echo $id; ?>' class='text-white nav-link'>Registro de Combates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href='combate-usuario.php?id=<?php echo $id; ?>' class='text-white nav-link'>Simulador de Combate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href='datos.php?id=<?php echo $id; ?>' class='text-white nav-link'>Tus datos</a>
+                    </li>
+                </div>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <span class="navbar-text text-white">Hola <?php echo $nombre_activo; ?> - </span>
+                        <a href="salir.php" class="nav-link d-inline">Cerrar sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>  
 <?php
     if($fila['Ganadas']==0){
             $media=0;
@@ -101,7 +114,7 @@ $fila = $resultado->fetch_assoc();
     <p class="boton"><button type="submit" class="btn btn-primary" name="submit"><a href="index-cliente.php">Volver</a></button></p>
 </div>
 <footer class="pie">
-        <div class="pie-img"><img src="imagenes/pokemon.png"></div>
+        <div class="pie-img"><img src="imagenes/pokemon.png" alt="Pokémon"></div>
         <div class="juegos">
             <ul>
                 <h3>¡¡¡Los mejores juegos!!!</h3>
@@ -112,18 +125,18 @@ $fila = $resultado->fetch_assoc();
         </div>
         <div class="social">
             <ul>
-                <h3>Síguenos<h3>
+                <h3>Síguenos</h3>
                 <li>
                     <i><a href="https://www.instagram.com/pokemon/" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"></a>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"></a>
                     </i>
                     <i>
                     <a href="https://www.facebook.com/PokemonOficialES/?locale=es_LA" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"></a>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"></a>
                     </i>
                     <i>
                         <a href="https://x.com/pokemon_es_esp" target="_blank">
-                            <img src="imagenes/twitter.png">
+                            <img src="imagenes/twitter.png" alt="Twitter">
                         </a>
                     </i>
                 </li>

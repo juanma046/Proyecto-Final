@@ -320,12 +320,27 @@ h1{
     height: auto;
 }
 
+.contenedor-login {
+    width: 100%;
+    max-width: 400px; /* Limita el ancho del contenedor para que no se expanda demasiado en pantallas grandes */
+}
+
+@media (max-width: 600px) {
+    .login input[type="text"],
+    .login input[type="password"],
+    .login input[type="submit"] {
+        width: calc(100% - 20px); /* Ajusta el ancho teniendo en cuenta el padding */
+    }
+}
+
 .login {
     padding: 50px 20px;
 	margin: calc(25% + 100px);
 	margin-top: 70px;
 	padding-top: 28px;
-	margin-bottom: 30px
+	margin-bottom: 30px;
+    display: inline-block;
+    text-align: left;
 }
 
 .login input {
