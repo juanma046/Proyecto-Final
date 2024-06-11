@@ -8,10 +8,10 @@
     <title>Login</title>
 </head>
 <body>
-    <center>
-        <div class="contenedor-login">
+    <div class="login-container">
+        <center>
         <form action="loguear.php" method="POST" class="login">
-            <img src="imagenes/escudo.svg" width="200px" class="escudo">
+            <img src="imagenes/escudo.svg" width="200px">
             <br>
             <input type="text" name="usuario" placeholder="Ingresa tu usuario" required>
             <br><br>
@@ -26,8 +26,9 @@
             echo "<div style='color: red;'>$errorMessage</div>";
         }
         ?>
-        </div>
-    </center>
+        </center>
+    </div>
+    
 </body>
 </html>
 

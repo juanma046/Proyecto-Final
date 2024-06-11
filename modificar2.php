@@ -42,7 +42,9 @@
 			$sql2 = "SELECT * FROM participantes WHERE id_participante LIKE '$id'";
 			$resultado2 = $mysqli->query($sql2);
 			$fila = $resultado2->fetch_assoc();
-	
+			
+			echo "<center>";
+
 			if($resultado > 0){
 				echo "<button type='button' class='btn btn-lg btn-primary' disabled>El registro ha sido editado correctamente</button>";
 			   //header("Location: index.php");
@@ -51,6 +53,8 @@
 			}
 			echo "<br>";
 			echo "<button class='btn btn-primary'><a href='jugadores.php?id=$fila[id_participante]' class='text-white'> Regresar</a></button>";
+
+			echo "</center>";
 		?>
 			</main>
 		</div>

@@ -33,7 +33,7 @@
 			//Se ejecuta la sentencia y se guarda el resultado en $resultado
 			$resultado = $mysqli->query($sql);
 
-	
+			echo "<center>";
 			if($resultado > 0){
 				echo "<button type='button' class='btn btn-lg btn-primary' disabled>El participante ha sido eliminado</button>";
 			}else{
@@ -41,6 +41,7 @@
 			}
 			echo "<br>";
 			echo "<button class='btn btn-primary'><a href='index.php' class='text-white'>Regresar</a></button>";
+			echo "</center>";
 			
 			
 		?>
