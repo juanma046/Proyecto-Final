@@ -16,6 +16,15 @@ body{
                                                 
 }
 
+input[type='submit']{
+    background-color: #0075dc;
+    color: #fff;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 20px;
+
+}
+
 .navbar-nav {
     display: flex;
     flex-direction: row;
