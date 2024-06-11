@@ -258,8 +258,6 @@ h1{
     text-align: center;
 }
 
-
-
 .batalla-container {
     display: flex;
     justify-content: center;
@@ -288,6 +286,12 @@ h1{
     margin:20px;
 }
 
+.pokemon-carta {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    border-radius: 20px;
+}
 
 .mensaje {
     margin-top: 30px;
@@ -335,6 +339,7 @@ h1{
 }
 
 
+
 .login-container {
     max-width: 400px;
     width: 90%;
@@ -342,12 +347,10 @@ h1{
     padding: 20px;
   }
 
-  .login input[type="text"], .login input[type="password"] {
-    width: 100%;
-    margin-bottom: 15px;
-  }
+ 
   .login img {
     display: block;
     margin: auto;
   }
+
 
